@@ -3,15 +3,13 @@
 class logon extends CI_Controller {
 
     public function index()
-    {       
-        $this->load->view('logon/index');
-    }
-    
-    public function _output($output)
     {
-        echo $this->load->view('layout/masterpage',NULL,TRUE);
+        //$this->output->cache(1440);
         
+        $model['css'] = "<link href=" . base_url('application/assets/css/logOn.css') . " rel='stylesheet' />";
+        $model['content'] = $this->load->view('logon/index',NULL,TRUE);
         
+        $this->load->view('layout/masterpage',$model);
     }
     
 }
