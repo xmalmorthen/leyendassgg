@@ -1,3 +1,4 @@
+p{ margin: 0 0 2px;}
 #login-box {
   background: rgba(255, 255, 255, 0.66);
   overflow: hidden;
@@ -24,7 +25,7 @@
 #login-box input[type=password] {
   background: #fff;
   border: none;
-  padding: 5px 5px 5px 40px;
+  padding: 5px 5px 5px 50px;
   width: 100%;
   height: 50px;
   background-repeat: no-repeat;
@@ -36,16 +37,15 @@
     background-color: #eee;
   }
 }
-#login-box input[type=text].inputUser,
-#login-box input[type=password].inputUser {
-  background-image: url("../Images/logOn/icon-user.png");
-  margin-bottom: 20px;
-  margin-top: 24px;
+#login-box .inputarea{
+  margin-bottom: 5px;
+  margin-top: 24px;    
 }
-#login-box input[type=text].inputPassword,
-#login-box input[type=password].inputPassword {
+#login-box .inputarea .inputUser {
+  background-image: url("../Images/logOn/icon-user.png");  
+}
+#login-box .inputarea .inputPassword {
   background-image: url("../Images/logOn/icon-lock.png");
-  margin-bottom: 20px;
 }
 #login-box .btn-entrar {
   background-color: #119548;
@@ -60,4 +60,8 @@
 }
 .field-validation-error {
   color: #f00;
+}
+.error{
+    color: red;
+    font-weight: bold;
 }

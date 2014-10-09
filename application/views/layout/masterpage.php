@@ -1,6 +1,6 @@
 <html>
     <head>
-        <title>Inicio de Sesión</title>
+        <title><?php echo isset($title) ? $title : 'SAL' ; ?></title>
         <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
         <link href="http://www.colima-estado.gob.mx/ci/css/bs3/bootstrap.min.css" rel="stylesheet" />
         <link href="<?php echo base_url('application/assets/css/master.css'); ?>" rel="stylesheet" />
@@ -24,7 +24,7 @@
         </header>
         <section>
             <article id="seccionInicio" class="container">
-                <?php echo $content; ?>
+                <?php echo isset($content) ? $content : NULL; ?>
             </article>
         </section>
         <footer>
