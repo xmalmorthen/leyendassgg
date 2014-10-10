@@ -31,7 +31,7 @@
             }
             .infoarea{
                 text-align: center;
-                padding-top: 308px;
+                padding-top: 200px;
             }
             .btn-back {
                 background-color: #119548;
@@ -66,8 +66,8 @@
         <section>
             <article id="seccionContenido" class="container">
                 <div class="row margensuperior">
-                    <div class="col-md-8">
-                        <img src="<?php echo base_url('application/assets/images/layout/error.png'); ?>" alt="Error" height="600" width="600">
+                    <div class="col-md-8" style="text-align: center;">
+                        <img src="<?php echo base_url('application/assets/images/layout/error.png'); ?>" alt="Error" height="500" width="500">
                     </div>
                     <div class="col-md-4 infoarea">
                         <span class="negrita titleerr">¡Oh, no!</span><br/>
