@@ -5,12 +5,9 @@
         <link href="http://www.colima-estado.gob.mx/ci/css/bs3/bootstrap.min.css" rel="stylesheet" />
         <link href="<?php echo base_url('application/assets/css/master.css'); ?>" rel="stylesheet" />
         <style type="text/css">
-            a:link   
+            a:link, a:hover, a:visited
             {   
                 text-decoration:none;   
-            }
-            a:hover   
-            {   
                 color: #fff;
             }
             .margensuperior{

@@ -8,15 +8,13 @@ class verifyuser{
     public function  __construct() {
     	$this->_CI = & get_instance();        
         $this->cnfg = ini_cnfg::parse();
-        
-        //$this->_CI->session->sess_destroy();
-        
     }    
 
     public function validateUser($params = NULL){		
         $method = $this->_CI->router->method;        
         $controller = $this->_CI->router->class;
-		
+               
+        //$this->_CI->config->set_item('base_url', base_url('index.php') );
         if ( $controller == 'errorlog') return;
 		
         $user = $this->_CI->session->userdata("logged_in");

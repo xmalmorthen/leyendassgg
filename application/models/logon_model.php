@@ -21,18 +21,17 @@ class logon_model extends CI_Model{
             
             $data = $query->result_array();
             if ($data){
-                if (base64_encode($password) == $data[0]['clave']){
-                    $sess_array = array();
-                    foreach($result as $row)
+                if (md5($password) == $data[0]['clave']){
+                    $sess_array = NULL;                                     
+                    foreach($data as $row)
                     {
                         $sess_array = array(
                             'id' => $data[0]['idusuario'],
                             'username' => $username,
                             'name' => $data[0]['nombre']
                         );
-                        $this->session->set_userdata('logged_in', $sess_array);
                     }
-                    return true;
+                    return $sess_array;
                 } else {
                     return false;
                 }

@@ -1,3 +1,10 @@
+<style type="text/css">
+    .errorarea{
+        text-align: left;
+        padding: 20px 0px 0px 0px !Important;
+    }    
+</style>
+
 <div id="login-box">
     <?php echo form_open('logon'); ?>
         <table>
@@ -7,6 +14,16 @@
                     <?php echo form_error('sumary_errors'); ?>
                 </td>
             </tr>
+            <?php if (isset($errorsumary)) { ?>
+            <tr>
+                <td>
+                    <div class="error errorarea">
+                        <i class="fa fa-exclamation-triangle"></i>
+                        <span>Usuario y/o contraseña incorrectos...</span>
+                    </div>                    
+                </td>                    
+            </tr>
+            <?php } ?>
             <tr>
                 <td>
                     <div class="inputarea">
@@ -21,16 +38,14 @@
                         <?php echo form_error('password'); ?>
                         <input type="password" id="passowrd" name="password" class="inputPassword"  placeholder="     contraseña"  value="<?php echo set_value('password'); ?>"/>
                     </div>
-                    <input type="checkbox" name="remember" value="remember"> <label>Mantener la sesión iniciada</label><br>                    
                 </td>
             </tr>
             <tr>
                 <td>
-                    <div class="controles">
+                    <div class="controles" style="padding-top: 20px;">
                         <input type="submit" value="entrar" class="btn-entrar" />
                     </div>
                 </td>
             </tr>
-        </table>
-    </form>
+        </table>    
 </div>

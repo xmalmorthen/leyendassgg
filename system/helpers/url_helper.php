@@ -535,6 +535,9 @@ if ( ! function_exists('redirect'))
 			$uri = site_url($uri);
 		}
 
+                //die(var_dump($uri));
+                
+                
 		switch($method)
 		{
 			case 'refresh'	: header("Refresh:0;url=".$uri);

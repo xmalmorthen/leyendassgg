@@ -9,7 +9,7 @@ class errorlog extends CI_Controller {
     }   
     
     function index(){
-        redirect('errorlog/show','refresh');
+        redirect('errorlog/show');
     }
     
     function show(){                

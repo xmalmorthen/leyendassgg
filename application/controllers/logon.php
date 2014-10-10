@@ -11,10 +11,10 @@ class logon extends CI_Controller {
         $this->load->library('form_validation');
     }
     
-    private function _showloginpage(){        
+    private function _showloginpage(){       
         $this->model['css'] = "<link href=" . base_url('application/assets/css/logOn.css') . " rel='stylesheet' />";        
         
-        $this->model['content'] = $this->load->view('logon/index',NULL,TRUE);
+        $this->model['content'] = $this->load->view('logon/index',$this->model,TRUE);
         $this->load->view('layout/masterpage',$this->model);
     }
     
@@ -24,49 +24,56 @@ class logon extends CI_Controller {
             $this->_showloginpage();            
         } else {
             $this->form_validation->set_message('required', 'El campo es requerido');       
-            $this->form_validation->set_error_delimiters('<p class="error">','</p>');
+            $this->form_validation->set_error_delimiters('<div class="error"><i class="fa fa-exclamation-triangle"></i><span>','</span></div>');
 
             $this->form_validation->set_rules('username', 'Username', 'trim|required|xss_clean');
-            $this->form_validation->set_rules('password', 'Password', 'trim|required|xss_clean|callback_checkuser');        
+            $this->form_validation->set_rules('password', 'Password', 'trim|required|xss_clean');        
 
             if($this->form_validation->run() == TRUE)
-            {
-                redirect('leyenda', 'refresh');
-            } else {
-                
-                $this->_showloginpage();
-            }
+            {                
+                if ($this->_checkuser($this->input->post('password'))){
+                    redirect('leyenda');                    
+                } else {                    
+                    $this->model['errorsumary'] = 'Usuario y/o contraseña incorrectos...';
+                }
+            } 
+            $this->_showloginpage();
         }
     }
     
-    function checkuser($password)
+    private function _checkuser($password)
     {
         /*
          * forzado de inicio de sesion
          */
-        $sess_array = array(
+        /*$sess_array = array(
             'id' => '666',
             'username' => 'xmalmorthen',
             'name' => 'Miguel Angel Rueda Aguilar'
         );
         $this->session->set_userdata('logged_in', $sess_array);
         return TRUE;
-               
+          */     
         /*
          * forzado de inicio de sesion
          */
-        
-        
+                
         $this->load->model('logon_model');
         $username = $this->input->post('username');
         
-        if ($this->logon_model->login($username,$password)) {            
+        $sess_array = $this->logon_model->login($username,$password);
+        if ($sess_array) {
+            $this->session->set_userdata('logged_in', $sess_array);
             return TRUE;
-        }else{
-            $this->form_validation->set_message('sumary_errors', 'Usuario y/o contraseña incorrectos...');
+        }else{            
             $this->form_validation->set_message('checkuser', '');
             return FALSE;
       }
+    }
+    
+    public function logout(){
+        $this->session->sess_destroy();
+        redirect('logon');
     }
     
 }
