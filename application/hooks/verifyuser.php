@@ -6,24 +6,21 @@ class verifyuser{
     private $cnfg;
 
     public function  __construct() {
-    	$this->_CI = & get_instance();
-        
+    	$this->_CI = & get_instance();        
         $this->cnfg = ini_cnfg::parse();
+        
+        //$this->_CI->session->sess_destroy();
         
     }    
 
-    public function validateUser($params = NULL){
-        /*
-         * Obtenemos el metodo y controlador
-         */
+    public function validateUser($params = NULL){		
         $method = $this->_CI->router->method;        
         $controller = $this->_CI->router->class;
-        $user = $this->_CI->session->userdata("id_usuario");
+		
+        if ( $controller == 'errorlog') return;
+		
+        $user = $this->_CI->session->userdata("logged_in");
         
-        if ( $this->cnfg->general['environment'] != 'development' ) {
-            $this->_CI->output->cache(1440);            
-        }
-                
         //Si no está el usuario autentificado, redirecciona a login.
         if($user == FALSE){            
             if($controller != 'logon'){
@@ -31,5 +28,5 @@ class verifyuser{
                 exit();
             }
         }
-    }
+    }	
 }

@@ -11,7 +11,7 @@
   src: url("../fonts/Roboto/roboto_bold_macroman/Roboto-Bold-webfont.woff");
 }
 body {
-  background: url("../Images/logOn/fondo2.jpg") no-repeat center center fixed;
+  background: #fff;
   height: 100%;
   background-size: 100% auto;
 }

@@ -15,7 +15,7 @@ $hook['post_controller_constructor'][] = array(
                                 'function' => 'validateUser',
                                 'filename' => 'verifyuser.php',
                                 'filepath' => 'hooks',
-                                'params'   => array('login') // Aqui va el array con los nombres de controlador que NO necesita verificacion de acceso.
+                                'params'   => array('login','errorlog') // Aqui va el array con los nombres de controlador que NO necesita verificacion de acceso.
                                 );
 
 /* End of file hooks.php */

@@ -1,3 +1,4 @@
+<?php $sess = $this->session->userdata("logged_in");?>
 <html>
     <head>
         <title><?php echo isset($title) ? $title : 'SAL' ; ?></title>
@@ -12,18 +13,21 @@
             <div class="adorno2"></div>
             <div class="container">
                 <div class="row">
-                    <div class="col-sm-12">
+                    <div class="col-sm-6">
                         <img src="<?php echo base_url('application/assets/images/layout/logo.png'); ?>" class="logo"/>
                         <div class="textos">
                             <span class="negritas">SISTEMA PARA LA ADMINISTRACIÓN</span><br />
                             <span>DE LEYENDAS</span>
                         </div>
+                    </div>                    
+                    <div class="col-sm-5" style="float: right; text-align: right;">
+                        Aqui poner datos de sesión...
                     </div>
                 </div>
             </div>            
         </header>
         <section>
-            <article id="seccionInicio" class="container">
+            <article id="seccionContenido" class="container">
                 <?php echo isset($content) ? $content : NULL; ?>
             </article>
         </section>

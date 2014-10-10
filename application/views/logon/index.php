@@ -4,7 +4,7 @@
             <tr>
                 <td>
                     <span>Para ingresar es necesario contar con su nombre de usuario y contraseña  que se le brindó en las oficinas.</span>
-                    <?php echo form_error('check_database'); ?>
+                    <?php echo form_error('sumary_errors'); ?>
                 </td>
             </tr>
             <tr>

@@ -7,7 +7,7 @@ class logon_model extends CI_Model{
         $this->load->database();
     }
     
-    public function login($username,$password) {       
+    public function login($username,$password) {
         try        
         {
             $vigente = 1;
@@ -20,16 +20,28 @@ class logon_model extends CI_Model{
             $query=$this->db->get();
             
             $data = $query->result_array();
-            
-            if (base64_encode($password) == $data[0]['clave']){
-                return true;                
+            if ($data){
+                if (base64_encode($password) == $data[0]['clave']){
+                    $sess_array = array();
+                    foreach($result as $row)
+                    {
+                        $sess_array = array(
+                            'id' => $data[0]['idusuario'],
+                            'username' => $username,
+                            'name' => $data[0]['nombre']
+                        );
+                        $this->session->set_userdata('logged_in', $sess_array);
+                    }
+                    return true;
+                } else {
+                    return false;
+                }
             } else {
-                return false;
-            }
-            
+                return false;                
+            }            
         } catch (Exception $e) {            
             msg_reporting::error_log($e);
-            Response::Respuesta(NULL,'ERROR',$e->getMessage(),500);
+            return false;
         }
     }    
 }

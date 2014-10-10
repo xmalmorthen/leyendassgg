@@ -31,8 +31,9 @@ class logon extends CI_Controller {
 
             if($this->form_validation->run() == TRUE)
             {
-                redirect('home', 'refresh');
+                redirect('leyenda', 'refresh');
             } else {
+                
                 $this->_showloginpage();
             }
         }
@@ -40,22 +41,30 @@ class logon extends CI_Controller {
     
     function checkuser($password)
     {
+        /*
+         * forzado de inicio de sesion
+         */
+        $sess_array = array(
+            'id' => '666',
+            'username' => 'xmalmorthen',
+            'name' => 'Miguel Angel Rueda Aguilar'
+        );
+        $this->session->set_userdata('logged_in', $sess_array);
+        return TRUE;
+               
+        /*
+         * forzado de inicio de sesion
+         */
+        
+        
         $this->load->model('logon_model');
         $username = $this->input->post('username');
         
-        if ($this->logon_model->login($username,$password)) {
-            $sess_array = array();
-            foreach($result as $row)
-            {
-                $sess_array = array(
-                    'id' => $row->id,
-                    'username' => $row->username
-                );
-                $this->session->set_userdata('logged_in', $sess_array);
-            }
+        if ($this->logon_model->login($username,$password)) {            
             return TRUE;
         }else{
-            $this->form_validation->set_message('checkuser', 'Usuario o contraseña inválidos...');
+            $this->form_validation->set_message('sumary_errors', 'Usuario y/o contraseña incorrectos...');
+            $this->form_validation->set_message('checkuser', '');
             return FALSE;
       }
     }
