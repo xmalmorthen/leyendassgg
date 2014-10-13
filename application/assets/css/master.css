@@ -76,3 +76,8 @@ footer .textos {
     z-index: 99999;
     display: none;
 }
+footer .optimized {
+    position: absolute;
+    right: 10px;
+    bottom: 1px;    
+}

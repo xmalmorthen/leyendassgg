@@ -24,6 +24,10 @@ class leyenda extends CI_Controller {
 
     public function index()
     {
+        $this->model['css'] = "<link href=" . base_url('application/assets/bootstrap-datepicker/css/datepicker3.css') . " rel='stylesheet' />";
+        $this->model['js'] = "<script src=" . base_url('application/assets/bootstrap-datepicker/js/bootstrap-datepicker.js') . "></script>" .
+                             "<script src=" . base_url('application/assets/bootstrap-datepicker/js/locales/bootstrap-datepicker.es.js') . "></script>";
+                
         if (!$this->input->post()){            
             $leyendastr = $this->leyenda_model->getLeyenda();
             
@@ -70,8 +74,7 @@ class leyenda extends CI_Controller {
     public function history(){
         $data = $this->leyenda_model->history();
         $model = array();
-        if ($data){
-            
+        if ($data){            
             $this->load->library('table');
 
             $this->table->set_template(array ( 'table_open'  => '<table id="historytable" class="table table-hover">' ));
@@ -83,13 +86,10 @@ class leyenda extends CI_Controller {
                 'Fecha Registro'
             ));            
             
-            $this->table->add_row(array('2010', '1', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.','01/01/2010','01/02/2010'));
-            $this->table->add_row(array('2011', '2', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.','01/01/2011','01/02/2011'));
-            $this->table->add_row(array('2012', '3', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.','01/01/2012','01/02/2012'));
-            $this->table->add_row(array('2013', '4', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.','01/01/2013','01/02/2013'));
-            $this->table->add_row(array('2014', '5', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.','01/01/2014','01/02/2014'));
-
-            $model['historytable'] = $this->table->generate();            
+            foreach ($data['item'] as $value) {
+                $this->table->add_row(array($value->anio,$value->numDecreto,$value->leyenda,$value->fechaDecreto,$value->fechaRegistro));
+            }
+            $model['historytable'] = $this->table->generate();
         }
         
         $this->model['css'] = "<link href=" . base_url('application/assets/dataTables-1.10.3/media/css/jquery.dataTables.css') . " rel='stylesheet' />";

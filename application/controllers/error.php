@@ -1,6 +1,6 @@
 <?php defined('BASEPATH') OR exit('No direct script access allowed');
 
-class errorlog extends CI_Controller {
+class error extends CI_Controller {
     
     public function __construct()
     {
@@ -9,11 +9,19 @@ class errorlog extends CI_Controller {
     }   
     
     function index(){
-        redirect('errorlog/show');
+        redirect('errorlog/log');
     }
     
-    function show(){                
+    function log(){                
         $this->load->spark( 'fire_log/0.8.2');
+    }
+    
+    function compatibilidad(){
+        $this->load->view('errors/error_compatibilidad');
+    }
+    
+    function noscript(){
+        $this->load->view('errors/noscript');
     }
     
 }

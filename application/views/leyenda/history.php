@@ -84,6 +84,8 @@
     $(document).ready(function() {
         $('#historytable').DataTable({
             "lengthMenu": [[3, 5, 10, 25, 50, 100, -1], [3, 5, 10, 25, 50, 100, "Todos"]],
+            "iDisplayLength" : 5,
+            "bProcessing": true,
             "pagingType": "full_numbers",
             "language": { 
                 "url": "<?php echo base_url(); ?>application/assets/dataTables-1.10.3/media/resourses/lang/datatables.spanish.lang"

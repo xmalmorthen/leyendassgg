@@ -63,7 +63,7 @@
         <h1 style="font-size: 45px;font-weight: bold;border-bottom: 1px solid #DBDBDB;margin-right: 39%;padding-bottom: 5px;"><i class="fa fa-file-text fa-2x"></i> Actualizar leyenda</h1>
         <div class="col-md-8" style="border-right: 1px solid rgba(209, 209, 209, 0.5);">
             <?php if(isset($leyendaactual)) { ?>
-            <div style="padding: 0px 5px 35px 5px;border: 2px solid rgba(236, 236, 236, 1);border-radius: 5px;">
+            <div style="padding: 0px 5px 35px 5px;border: 2px solid rgba(236, 236, 236, 1);border-radius: 5px;-moz-border-radius: 5px;-webkit-border-radius:5px;">
                 <h3>Leyenda actual</h3>
                 <p style="padding: 0 23px;color: #7e7e7e;">
                     <?php echo isset($leyendaactual) ? $leyendaactual : ''; ?>
@@ -109,7 +109,13 @@
                     <div class="espacio">
                         <i class="fa fa-asterisk"></i>
                         <span>Fecha de decreto</span>
-                        <input id="fechadecreto" name="fechadecreto" class="form-control input-lg" type="date" placeholder="Fecha de decreto" value="<?php echo (strlen(set_value('fechadecreto')) > 0) ? set_value('fechadecreto') : date("Y-m-d"); ?>">
+                        
+                        <div class='input-group date' id='datetimepicker'>
+                            <input id="fechadecreto" name="fechadecreto" type='text' class="form-control input-lg" data-date-format="DD/MM/YYYY" value="<?php echo (strlen(set_value('fechadecreto')) > 0) ? set_value('fechadecreto') : date("d/m/Y"); ?>"/>
+                            <span class="input-group-addon">
+                                <span class="glyphicon glyphicon-calendar"></span>
+                            </span>
+                        </div>
                         <?php echo form_error('fechadecreto'); ?>
                     </div>
                     <div class="espacio">
@@ -182,6 +188,14 @@
     }
     
     $(document).ready(function() {
+        
+        $('#datetimepicker').datepicker({
+            format: "dd/mm/yyyy",
+            language: "es",
+            calendarWeeks: true,
+            autoclose: true,
+            todayHighlight: true
+        });
         
         $('#masinfoleyenda').popover({
             html:true,

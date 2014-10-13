@@ -13,6 +13,9 @@
             .margensuperior{
                 padding-top: 25px;
             }
+            .margeninferior{
+                padding-bottom: 150px;
+            }
             .normal{
                 font-family: "RobotoRegular";                
             }
@@ -61,7 +64,7 @@
         </header>
         <section>
             <article id="seccionContenido" class="container">
-                <div class="row margensuperior">
+                <div class="row margensuperior margeninferior">
                     <div class="col-md-8" style="text-align: center;">
                         <img src="<?php echo base_url('application/assets/images/layout/error.png'); ?>" alt="Error" height="500" width="500">
                     </div>

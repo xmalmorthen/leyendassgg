@@ -43,8 +43,8 @@ class leyenda_model extends CI_Model{
     public function history (){
         try        
         {
-            //TODO: IMPLEMENTAR LLAMADO A WEBSERVICE
-            return TRUE;
+            $leyendasstr = $this->rest->get('getLeyendas');
+            return $leyendasstr;
         } catch (Exception $e) {            
             msg_reporting::error_log($e);
             return NULL;

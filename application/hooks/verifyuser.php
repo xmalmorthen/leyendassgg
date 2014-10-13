@@ -15,7 +15,7 @@ class verifyuser{
         $controller = $this->_CI->router->class;
                
         //$this->_CI->config->set_item('base_url', base_url('index.php') );
-        if ( $controller == 'errorlog') return;
+        if ( $controller == 'error') return;
 		
         $user = $this->_CI->session->userdata("logged_in");
 
