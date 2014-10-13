@@ -63,7 +63,7 @@
         <h1 style="font-size: 45px;font-weight: bold;border-bottom: 1px solid #DBDBDB;margin-right: 39%;padding-bottom: 5px;"><i class="fa fa-file-text fa-2x"></i> Actualizar leyenda</h1>
         <div class="col-md-8" style="border-right: 1px solid rgba(209, 209, 209, 0.5);">
             <?php if(isset($leyendaactual)) { ?>
-            <div style="padding-bottom: 35px;">
+            <div style="padding: 0px 5px 35px 5px;border: 2px solid rgba(236, 236, 236, 1);border-radius: 5px;">
                 <h3>Leyenda actual</h3>
                 <p style="padding: 0 23px;color: #7e7e7e;">
                     <?php echo isset($leyendaactual) ? $leyendaactual : ''; ?>
