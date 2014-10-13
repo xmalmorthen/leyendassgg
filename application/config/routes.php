@@ -38,7 +38,7 @@
 |
 */
 
-$route['default_controller'] = "leyenda";
+$route['default_controller'] = "leyenda/history";
 $route['404_override'] = '';
 
 

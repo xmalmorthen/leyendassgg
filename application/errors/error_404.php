@@ -1,4 +1,7 @@
-<?php function base_url($uri = NULL){return $GLOBALS['CFG']->config['base_url'] . $uri;};?>
+<?php 
+    if (!function_exists('base_url')) {
+        function base_url($uri = NULL){return $GLOBALS['CFG']->config['base_url'] . $uri;};
+    }?>
 <html>
     <head>
         <title><?php echo isset($title) ? $title : 'SAL - Oh, ohh...!!!' ; ?></title>

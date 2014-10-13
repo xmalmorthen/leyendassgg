@@ -5,9 +5,10 @@
         border: 3px solid #FFFFFF;
     }
     #logged_data .data_area{
-        width: auto; 
+        /*width: auto; */
         text-align: left; 
-        margin: 6px 0px 0px 35px;       
+        margin-top: 4px;   
+        float: right;
     }
     #logged_data .btn_logout{
         padding: 11px 0 0 0;
@@ -28,17 +29,17 @@
     }
 </style>
 
-<div class="row" style="float: right;">
-    <div class="col-md-1">
+<div>
+    <div style="float:right; max-width: 85%; padding: 7px 0 0 4px;">
+        <span class="texto_negrita texto_bienvenida">Bienvenido...!!!</span>
+        <a href="<?php echo site_url('logon/logout'); ?>" data-toggle="tooltip" data-placement="bottom" title="Cerrar sesión" style="float: right; margin: -15px 0 0 10px;">
+            <i class="fa fa-sign-out fa-3x"></i>
+        </a>        
+        <br/>
+        <span class="texto_normal"><?php echo $name; ?></span>       
+    </div>    
+    <div style="float:right;">
         <img src="<?php echo base_url('application/assets/images/logon/logged.png'); ?>" alt="Sesión iniciada" class="img-circle img_logged" />
     </div>
-    <div class="col-md-1 data_area">
-        <span class="texto_negrita texto_bienvenida">Bienvenido...!!!</span><br/>
-        <span class="texto_normal"><?php echo $name; ?></span>
-    </div>
-    <div class="col-md-1 btn_logout">
-        <a href="<?php echo site_url('logon/logout'); ?>">
-            <i class="fa fa-sign-out fa-3x" data-toggle="tooltip" data-placement="bottom" title="Cerrar sesión"></i>
-        </a>
-    </div>    
+    
 </div>

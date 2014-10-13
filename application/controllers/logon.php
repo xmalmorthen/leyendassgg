@@ -19,9 +19,10 @@ class logon extends CI_Controller {
     }
     
     public function index()
-    {   
-        if (!$this->input->post()){
-            $this->_showloginpage();            
+    {           
+        if (!$this->input->post()){            
+            $this->model['rout'] =  $this->session->flashdata('togourl');
+            $this->_showloginpage();
         } else {
             $this->form_validation->set_message('required', 'El campo es requerido');       
             $this->form_validation->set_error_delimiters('<div class="error"><i class="fa fa-exclamation-triangle"></i><span>','</span></div>');
@@ -30,30 +31,30 @@ class logon extends CI_Controller {
             $this->form_validation->set_rules('password', 'Password', 'trim|required|xss_clean');        
 
             if($this->form_validation->run() == TRUE)
-            {                
+            {
                 if ($this->_checkuser($this->input->post('password'))){
-                    redirect('leyenda');                    
+                    $this->_redirect();
                 } else {                    
                     $this->model['errorsumary'] = 'Usuario y/o contraseña incorrectos...';
                 }
-            } 
+            }
+            $this->model['rout'] =  $this->input->post('rout');
             $this->_showloginpage();
         }
     }
     
     private function _checkuser($password)
-    {
+    {        
         /*
          * forzado de inicio de sesion
          */
-        /*$sess_array = array(
+        $sess_array = array(
             'id' => '666',
             'username' => 'xmalmorthen',
             'name' => 'Miguel Angel Rueda Aguilar'
         );
         $this->session->set_userdata('logged_in', $sess_array);
         return TRUE;
-          */     
         /*
          * forzado de inicio de sesion
          */
@@ -69,6 +70,20 @@ class logon extends CI_Controller {
             $this->form_validation->set_message('checkuser', '');
             return FALSE;
       }
+    }
+    
+    private function _redirect(){
+        $rout = $this->input->post('rout');
+        
+        if ($rout){
+            $originrout = $this->uri->segment(1) . $this->uri->segment(2);            
+            if ($rout != $originrout ){
+                $redirect = $rout;
+            } else {
+                $redirect = $this->router->default_controller;                
+            }
+        }        
+        redirect($redirect);        
     }
     
     public function logout(){

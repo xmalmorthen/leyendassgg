@@ -5498,7 +5498,7 @@ button.close {
   position: absolute;
   z-index: 1070;
   display: block;
-  font-size: 12px;
+  font-size: 16px;
   line-height: 1.4;
   visibility: visible;
   filter: alpha(opacity=0);
@@ -5539,6 +5539,7 @@ button.close {
   height: 0;
   border-color: transparent;
   border-style: solid;
+  margin: 1px;
 }
 .tooltip.top .tooltip-arrow {
   bottom: 0;
