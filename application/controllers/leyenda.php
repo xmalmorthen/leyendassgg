@@ -80,14 +80,15 @@ class leyenda extends CI_Controller {
             $this->table->set_template(array ( 'table_open'  => '<table id="historytable" class="table table-hover">' ));
             $this->table->set_heading(array (
                 'Año',
-                'Nùm. Decreto',
+                'Núm. Decreto',
                 'Leyenda',
                 'Fecha Decreto',
-                'Fecha Registro'
+                'Fecha Registro',
+                'Activo'
             ));            
-            
+
             foreach ($data['item'] as $value) {
-                $this->table->add_row(array($value->anio,$value->numDecreto,$value->leyenda,$value->fechaDecreto,$value->fechaRegistro));
+                $this->table->add_row(array($value->anio,$value->numDecreto,$value->leyenda,$value->fechaDecreto,$value->fechaRegistro, ($value->activa == '1') ? 'true' : 'false' ));
             }
             $model['historytable'] = $this->table->generate();
         }
