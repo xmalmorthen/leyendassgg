@@ -48,14 +48,15 @@ class logon extends CI_Controller {
         /*
          * forzado de inicio de sesion
          */
-        $sess_array = array(
+        /*$sess_array = array(
             'id' => '666',
             'username' => 'xmalmorthen',
             'name' => 'Miguel Angel Rueda Aguilar'
         );
         $this->session->set_userdata('logged_in', $sess_array);
-        return TRUE;
-        /*
+        return TRUE;        
+         /*
+         *
          * forzado de inicio de sesion
          */
                 
