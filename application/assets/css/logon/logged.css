@@ -1,0 +1,45 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 15/10/2014, 03:08:28 PM
+    Author     : Xmal
+*/
+#logged_data #bienvenidalabel{
+    float:right; max-width: 78%; padding: 7px 0 0 4px;    
+}
+
+#logged_data .texto_normal{
+    color: #7e7e7e;
+}
+
+#logged_data .texto_negrita{
+    color: #575757;
+}
+
+#logged_data .texto_bienvenida {
+    font-size: 20px;
+
+}   
+#logged_data .logoutbtn {
+    float: right; margin: -15px 0 0 10px;
+}
+
+#logged_data #imguserlogin {
+    float:right;
+}
+
+#logged_data #imguserlogin .img_logged{
+    width: 62px;
+    height: 62px;
+    border: 3px solid #FFFFFF;
+}
+
+@media screen and (max-width: 611px) {
+    #bienvenidalabel .texto_normal  {
+      display: none;
+    }
+}
+
