@@ -1,0 +1,32 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 15/10/2014, 03:34:38 PM
+    Author     : Xmall
+*/
+.history_formcontent{
+    padding: 0px 30px 120px 30px;
+}
+
+#infoareahistory span{
+    font-size: 20px;
+}
+
+#infoareahistory .tamaniolabel{
+    font-size: 16px;
+}
+
+@media screen and (max-width: 991px) {
+    #infoareahistory {
+      padding-top: 20px;
+    }
+    #actionhideinfoareahistory {
+        display: none;
+    }
+    #infoareahistory #info {
+        border-left: none !Important;
+    }
+}
