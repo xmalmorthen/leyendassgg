@@ -63,8 +63,21 @@
 </style>
 
     <div class="row leyenda_formcontent">
-        <h1 style="font-size: 45px;font-weight: bold;border-bottom: 1px solid #DBDBDB;margin-right: 39%;padding-bottom: 5px;"><i class="fa fa-file-text fa-2x"></i> Actualizar leyenda</h1>
-        <div class="col-md-8">
+        <i id="actionshowinfoarealeyenda" class="fa fa-info-circle fa-5x" title="Mostrar información de la página" style="float: right;margin-top: 43px;color: #941E1E;cursor: pointer; display: none"></i>
+        <h1 style="font-size: 45px;font-weight: bold;border-bottom: 1px solid #DBDBDB;margin-right: 39%;padding-bottom: 5px;"><i class="fa fa-file-text fa-2x"></i> Actualizar leyenda </h1>        
+        <div id="data" class="col-md-8">
+            <?php if (isset($msgresponse)) {
+                    if ($msgresponse == 'success') { ?>
+            <div class="alert alert-success alert-dismissible" role="alert" style="margin: 10px auto 20px auto;">
+                <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <span class="label label-success" style="font-size: 25px">ÉXITO!</span>&nbsp;&nbsp;&nbsp;<span style="font-size: 22px;"><strong>La leyenda fué actualizada...</strong></span>
+            </div>
+            <?php } else { ?>
+            <div class="alert alert-danger alert-dismissible" role="alert" style="margin: 10px auto 20px auto;">
+                <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <span class="label label-danger" style="font-size: 25px">ERROR!</span>&nbsp;&nbsp;&nbsp;<span style="font-size: 22px;"><strong>Oh, ohh! Algo salió mal al actualizar la leyenda, favor de intentarlo mas tarde...</strong></span>
+            </div>
+            <?php } }?>
             <?php if(isset($leyendaactual)) { ?>
             <div style="padding: 0px 5px 35px 5px;border: 2px solid rgba(236, 236, 236, 1);border-radius: 5px;-moz-border-radius: 5px;-webkit-border-radius:5px;">
                 <h3>Leyenda actual</h3>
@@ -136,7 +149,8 @@
             </form>
         </div>
         <div id="infoarealeyenda">
-            <div class="col-md-4" style="border-left: 1px solid rgba(209, 209, 209, 0.5);">
+            <div id="info" class="col-md-4" style="border-left: 1px solid rgba(209, 209, 209, 0.5);">
+                <i id="actionhideinfoarealeyenda" class="fa fa-times fa-2x" title="Ocultar panel de información" style="float: right;color: #941E1E;cursor: pointer;"></i>
                 <div class="row">
                     <div class="col-md-2">
                         <i class="fa fa-info-circle fa-5x"></i>
@@ -194,8 +208,31 @@
         } 
     }
     
+    var showleyendainfoarea = function(){
+            $('#actionshowinfoarealeyenda').hide();
+            $('.leyenda_formcontent #data').removeClass('col-md-12').addClass('col-md-8');
+            $('#infoarealeyenda').show();
+            $.cookie('panelinformacionleyenda', 'true', { path: '/' });
+        },
+        hideleyendainfoarea = function(){
+            $('#infoarealeyenda').hide();
+            $('.leyenda_formcontent #data').removeClass('col-md-8').addClass('col-md-12');
+            $('#actionshowinfoarealeyenda').show();
+            $.cookie('panelinformacionleyenda', 'false', { path: '/' });
+        },
+        initleyendainfoarea = function(){             
+            if ($.cookie('panelinformacionleyenda') == 'false'){
+               hideleyendainfoarea();
+            }
+        };
+    
     $(document).ready(function() {
+        if(typeof $.cookie('panelinformacionleyenda') == "undefined") {
+            $.cookie('panelinformacionleyenda', 'true', { path: '/' });
+        }
         
+        initleyendainfoarea();
+
         $('#datetimepicker').datepicker({
             format: "dd/mm/yyyy",
             language: "es",
@@ -224,12 +261,11 @@
             window.onbeforeunload = preguntarAntesDeSalir;
         });         
         
-        $("#infoarealeyenda").click(function(){
-            $(this).hide();
-            $('.leyenda_formcontent .col-md-8').removeClass('col-md-8');
-            $('.leyenda_formcontent > div').addClass('col-md-12');
-        })
-        
-        
+        $('#actionshowinfoarealeyenda').click(function(){
+            showleyendainfoarea();
+        });
+        $('#actionhideinfoarealeyenda').click(function(){
+            hideleyendainfoarea();
+        });
     });       
 </script>

@@ -12,6 +12,7 @@
         <?php echo isset($css) ? $css : ''; ?>
         
         <script src="<?php echo base_url('application/assets/js/jquery-1.11.1.min.js'); ?>"></script>
+        <script src="<?php echo base_url('application/assets/js/jquery.cookie.js'); ?>"></script>
         <script src="<?php echo base_url('application/assets/js/modernizr.custom.98422.js'); ?>"></script>
         <script languaje="javascript" type="text/javascript">
             var $base_url = '<?php echo base_url(); ?>',

@@ -13,7 +13,7 @@ class verifyuser{
     public function validateUser($params = NULL){
         $method = $this->_CI->router->method;        
         $controller = $this->_CI->router->class;
-               
+        
         //$this->_CI->config->set_item('base_url', base_url('index.php') );
         if ( $controller == 'error') return;
 		
@@ -27,5 +27,7 @@ class verifyuser{
                 exit();
             }
         }
+        
+        
     }	
 }

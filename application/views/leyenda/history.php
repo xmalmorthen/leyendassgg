@@ -46,18 +46,20 @@
 </style>
 
     <div class="row history_formcontent">
+        <i id="actionshowinfoareahistory" class="fa fa-info-circle fa-5x" title="Mostrar información de la página" style="float: right;margin-top: 43px;color: #941E1E;cursor: pointer; display: none"></i>
         <h1 style="font-size: 45px;font-weight: bold;border-bottom: 1px solid #DBDBDB;margin-right: 39%;padding-bottom: 5px;"><i class="fa fa-table fa-2x"></i> Histórico de leyendas</h1>
         <br/>
-        <div class="col-md-9">
+        <div id="data" class="col-md-9">
             <?php echo $historytable; ?>
         </div>
         <div id="infoareahistory">
-            <div class="col-md-3" style="border-left: 1px solid rgba(209, 209, 209, 0.5);">
+            <div id="info" class="col-md-3" style="border-left: 1px solid rgba(209, 209, 209, 0.5);">
+                <i id="actionhideinfoareahistory" class="fa fa-times fa-2x" title="Ocultar panel de información" style="float: right;color: #941E1E;cursor: pointer;"></i>
                 <div class="row" style="padding-bottom: 30px;">
                     <div class="col-md-2">
                         <i class="fa fa-info-circle fa-5x"></i>
                     </div>
-                    <div class="col-md-10" style="padding: 16px 0 0 34px;">
+                    <div class="col-md-6" style="padding: 16px 0 0 34px;">
                         <span style="font-size: 28px; font-weight: bold; display: block; ">Información</span>
                         <span style="font-size: 13px; position: absolute; margin-top: -8px;">que debe saber...</span>
                     </div>
@@ -80,7 +82,32 @@
     </div>
 
 <script language="JavaScript" type="text/javascript"> 
+    
+    var showhistoryinfoarea = function(){
+            $('#actionshowinfoareahistory').hide();
+            $('.history_formcontent #data').removeClass('col-md-12').addClass('col-md-9');
+            $('#infoareahistory').show();
+            $.cookie('panelinformacionhistory', 'true', { path: '/' });
+        },
+        hidehistoryinfoarea = function(){
+            $('#infoareahistory').hide();
+            $('.history_formcontent #data').removeClass('col-md-9').addClass('col-md-12');
+            $('#actionshowinfoareahistory').show();
+            $.cookie('panelinformacionhistory', 'false', { path: '/' });
+        },
+        inithistoryinfoarea = function(){          
+            if ($.cookie('panelinformacionhistory') == 'false'){
+               hidehistoryinfoarea();
+            }
+        };
+    
     $(document).ready(function() {
+        if(typeof $.cookie('panelinformacionhistory') == "undefined") {
+            $.cookie('panelinformacionhistory', 'true', { path: '/' });
+        }
+        
+        inithistoryinfoarea();
+        
         $('#historytable').DataTable({
             "lengthMenu": [[3, 5, 10, 25, 50, 100, -1], [3, 5, 10, 25, 50, 100, "Todos"]],
             "order": [[ 0, "desc" ]],
@@ -103,6 +130,13 @@
                     $('td',nRow).css('background-color',"#cacaca");
                 }
             }
+        });
+        
+        $('#actionshowinfoareahistory').click(function(){
+            showhistoryinfoarea();
+        });
+        $('#actionhideinfoareahistory').click(function(){
+            hidehistoryinfoarea();
         });
     });
 </script>

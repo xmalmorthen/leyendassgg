@@ -17,8 +17,8 @@ class leyenda extends CI_Controller {
         $this->load->model('leyenda_model');
     }
     
-    private function _showformpage($page,$model = NULL){        
-        $this->model['content'] = $this->load->view($page,$model,TRUE);
+    private function _showformpage($page){        
+        $this->model['content'] = $this->load->view($page,$this->model,TRUE);
         $this->load->view('layout/masterpage',$this->model);
     }   
 
@@ -27,22 +27,17 @@ class leyenda extends CI_Controller {
         $this->model['css'] = "<link href=" . base_url('application/assets/bootstrap-datepicker/css/datepicker3.css') . " rel='stylesheet' />";
         $this->model['js'] = "<script src=" . base_url('application/assets/bootstrap-datepicker/js/bootstrap-datepicker.js') . "></script>" .
                              "<script src=" . base_url('application/assets/bootstrap-datepicker/js/locales/bootstrap-datepicker.es.js') . "></script>";
-                
-        if (!$this->input->post()){            
-            $leyendastr = $this->leyenda_model->getLeyenda();
+
+        $leyendastr = $this->leyenda_model->getLeyenda();
             
-            $model = array (
-                'fechadecreto' => utils::fecha(), 
-                'leyendaactual' => $leyendastr['leyenda'],
-                'anio' => $leyendastr['anio'],
-                'numDecreto' => $leyendastr['numDecreto'],
-                'fechaDecreto' => $leyendastr['fechaDecreto'],
-                'fechaRegistro' => $leyendastr['fechaRegistro']
-            );
-            
-            
-            $this->_showformpage('leyenda/index',$model);            
-        } else {          
+        $this->model['fechadecreto'] = utils::fecha();
+        $this->model['leyendaactual'] = $leyendastr['leyenda'];
+        $this->model['anio'] = $leyendastr['anio'];
+        $this->model['numDecreto'] = $leyendastr['numDecreto'];
+        $this->model['fechaDecreto'] = $leyendastr['fechaDecreto'];
+        $this->model['fechaRegistro'] = $leyendastr['fechaRegistro'];
+        
+        if ($this->input->post()){                       
             $this->form_validation->set_message('required', 'El campo es requerido');       
             $this->form_validation->set_error_delimiters('<div class="error"><i class="fa fa-exclamation-triangle"></i><span>','</span></div>');
             $this->form_validation->set_rules('decreto', 'Decreto', 'trim|required|xss_clean');
@@ -52,10 +47,9 @@ class leyenda extends CI_Controller {
             if($this->form_validation->run() == TRUE)
             {
                 //redirect('leyenda');
-            } else {                
-                $this->_showformpage('leyenda/index');
             }
         }
+        $this->_showformpage('leyenda/index');
     }
     
     function insertleyenda($textoleyenda)
@@ -64,20 +58,21 @@ class leyenda extends CI_Controller {
         $fechadecreto = $this->input->post('fechadecreto');
         
         if ($this->leyenda_model->insert($decreto,$fechadecreto,$textoleyenda)) {            
+            $this->model['msgresponse'] = 'success';
             return TRUE;
         }else{
             $this->form_validation->set_message('insertleyenda','');
+            $this->model['msgresponse'] = 'error';
             return FALSE;
         }
     }
     
     public function history(){
         $data = $this->leyenda_model->history();
-        $model = array();
         if ($data){            
             $this->load->library('table');
 
-            $this->table->set_template(array ( 'table_open'  => '<table id="historytable" class="table table-hover">' ));
+            $this->table->set_template(array ( 'table_open'  => '<table id="historytable" class="table table-hover" style="width:100% !Important;">' ));
             $this->table->set_heading(array (
                 'Año',
                 'Núm. Decreto',
@@ -90,13 +85,13 @@ class leyenda extends CI_Controller {
             foreach ($data['item'] as $value) {
                 $this->table->add_row(array($value->anio,$value->numDecreto,$value->leyenda,$value->fechaDecreto,$value->fechaRegistro, ($value->activa == '1') ? 'true' : 'false' ));
             }
-            $model['historytable'] = $this->table->generate();
+            $this->model['historytable'] = $this->table->generate();
         }
         
         $this->model['css'] = "<link href=" . base_url('application/assets/dataTables-1.10.3/media/css/jquery.dataTables.css') . " rel='stylesheet' />";
         $this->model['js'] = "<script src=" . base_url('application/assets/dataTables-1.10.3/media/js/jquery.dataTables.js') . "></script>        ";
                 
-        $this->_showformpage('leyenda/history',$model);        
+        $this->_showformpage('leyenda/history');        
     }
 }
 
