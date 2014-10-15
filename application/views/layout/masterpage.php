@@ -8,7 +8,7 @@
         
         <link rel="stylesheet" href="<?php echo base_url('application/assets/bootstrap-3.2.0-dist/css/bootstrap.css'); ?>">
         <link href="<?php echo base_url('application/assets/font-awesome-4.2.0/css/font-awesome.min.css'); ?>" rel="stylesheet">
-        <link href="<?php echo base_url('application/assets/css/master.css'); ?>" rel="stylesheet" />        
+        <link href="<?php echo base_url('application/assets/css/layout/master.css'); ?>" rel="stylesheet" />        
         <?php echo isset($css) ? $css : ''; ?>
         
         <script src="<?php echo base_url('application/assets/js/jquery-1.11.1.min.js'); ?>"></script>
@@ -34,7 +34,7 @@
                         </div>
                     </div>
                     <?php if ($sess) { ?>
-                    <div id="logged_data" class="col-sm-5" style="float:right; padding-top: 17px;">
+                    <div id="logged_data" class="col-sm-5">
                         <?php $this->load->view('logon/logged',$sess); ?>
                     </div>
                     <?php } ?>
@@ -61,7 +61,7 @@
                 </div>
                 <div id="loaderdiv"></div>
             </div>   
-            <div class="optimized" style="text-align: right; color: #E0E0E0; font-size: 12px">
+            <div class="optimized">
                 <span>Sitio desarrollado en HTML5, optimizado para resolución mínima de 1024 x 768 pixeles,<br/>
                       navegadores Web Google Chrome, Mozilla Firefox, Internet Explorer 9 o superior</span>
             </div>

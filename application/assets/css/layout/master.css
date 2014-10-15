@@ -1,29 +1,24 @@
-body {
-  /*background: #fdfdfd;*/
-  background: url("../images/layout/fondo2.jpg") no-repeat center center fixed;
-  height: 100%;
-  background-size: 100% 100%;
-}
-
-a:visited,
-a:link {   
+a:visited,a:link {   
     text-decoration:none;
     color: #868686;
 }
 
-@media screen and (max-width: 740px) {
-  body {
-    background: #fdfdfd;
-  }
+body {
+  background: url("../../images/layout/fondo2.jpg") no-repeat center center fixed;
+  height: 100%;
+  background-size: 100% 100%;
 }
+
 header {
   min-height: 100px;
   background-color: #DFDFDF;
 }
+
 header .logo {
   margin: 26px 10px 26px 20px;
   float: left;
 }
+
 header .textos {
   width: 280px;
   float: left;
@@ -31,6 +26,11 @@ header .textos {
   font-size: 15px;
   color: #7e7e7e;
 }
+
+header #logged_data{
+    float:right; padding-top: 17px;
+}
+
 @media screen and (max-width: 991px) {
   header .textos {    
     display: none;
@@ -46,10 +46,12 @@ footer {
   right: 0;
   z-index: 10;
 }
+
 footer .logo {
   margin: 26px 10px 26px 20px;
   float: left;
 }
+
 footer .textos {
   width: 280px;
   float: left;
@@ -57,31 +59,36 @@ footer .textos {
   font-size: 12px;
   color: #fff;
 }
+
 .adorno1 {
   width: 30%;
   float: left;
   height: 10px;
   background-color: #b5b5b5;
 }
+
 .adorno2 {
   width: 70%;
   float: left;
   height: 10px;
   background-color: #119548;
 }
+
 .error{
-        color: rgb(170, 43, 43);
-        text-align: right;
-        margin: 0 !Important;
-        padding: 1px 0 !Important;
-    }
+    color: rgb(170, 43, 43);
+    text-align: right;
+    margin: 0 !Important;
+    padding: 1px 0 !Important;
+}
+
 .error span {
     color: rgb(170, 43, 43) !Important;
     font-size: 15px !Important;
     padding-left: 3px;
 }
+
 #loaderdiv{
-    background: transparent url("../images/layout/loader.gif") no-repeat;
+    background: transparent url("../../images/layout/loader.gif") no-repeat;
     width: 300px;
     height: 300px;
     position: absolute;
@@ -90,8 +97,10 @@ footer .textos {
     z-index: 99999;
     display: none;
 }
+
 footer .optimized {
     position: absolute;
     right: 10px;
-    bottom: 1px;    
+    bottom: 1px;   
+    text-align: right; color: #E0E0E0; font-size: 12px
 }
