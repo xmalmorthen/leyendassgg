@@ -71,8 +71,8 @@
                     <div class="col-md-4 infoarea">
                         <span class="negrita titleerr">¡Oh, no!</span><br/>
                         <span class="negrita subt">Algo salió mal.</span><br/>
-                        <span>Gracias por darte cuenta - vamos a solucionarlo y todo volverá a la normalidad pronto</span><br/>
-                        <a href="<?php echo base_url(); ?>" class="btn-back normal">Ir al inicio</a>
+                        <span>Gracias por darte cuenta - vamos a solucionarlo y todo volverá a la normalidad pronto</span><br/><br/>
+                        <a href="<?php echo base_url(); ?>" ><input id="loginbtnsubmit" type="submit" value="Ir al inicio" class="btn btn-success btn-lg"></a>
                     </div>
                 </div>                
                 

@@ -75,8 +75,8 @@
                     <div class="col-md-4 infoarea">
                         <span class="negrita titleerr">¡Oh, no!</span><br/>
                         <span class="negrita subt">Ésta página no existe.</span><br/>
-                        <span>Ve a la pàgina principal y sigue tu camino desde allí</span><br/>
-                        <a href="<?php echo base_url(); ?>" class="btn-back normal">Ir al inicio</a>
+                        <span>Ve a la pàgina principal y sigue tu camino desde allí</span><br/><br/>
+                        <a href="<?php echo base_url(); ?>" ><input id="loginbtnsubmit" type="submit" value="Ir al inicio" class="btn btn-success btn-lg"></a>
                     </div>
                 </div>                
                 

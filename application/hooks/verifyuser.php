@@ -13,10 +13,12 @@ class verifyuser{
     public function validateUser($params = NULL){
         $method = $this->_CI->router->method;        
         $controller = $this->_CI->router->class;
+                
+        if ($this->_CI->agent->is_mobile())
+        {
+            redirect('error/nomobile');
+        }        
         
-        //$this->_CI->config->set_item('base_url', base_url('index.php') );
-        if ( $controller == 'error') return;
-		
         $user = $this->_CI->session->userdata("logged_in");
 
         //Si no está el usuario autentificado, redirecciona a login.

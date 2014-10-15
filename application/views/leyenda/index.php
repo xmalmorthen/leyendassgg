@@ -41,7 +41,7 @@
         padding: 17px 0 0 20px;
     }
     .popover{
-        width:450px;
+        width:400px;
         max-width: 450px;
     }
     .popover .row{
@@ -60,11 +60,24 @@
     #infoarealeyenda .tamaniolabel{
         font-size: 16px;
     }
+    
+    @media screen and (max-width: 991px) {
+        #infoarealeyenda {
+          padding-top: 80px;
+        }
+        #actionhideinfoarealeyenda {
+            display: none;
+        }
+        #infoarealeyenda #info {
+            border-left: none !Important;
+        }
+    }
+    
 </style>
 
     <div class="row leyenda_formcontent">
         <i id="actionshowinfoarealeyenda" class="fa fa-info-circle fa-5x" title="Mostrar información de la página" style="float: right;margin-top: 43px;color: #941E1E;cursor: pointer; display: none"></i>
-        <h1 style="font-size: 45px;font-weight: bold;border-bottom: 1px solid #DBDBDB;margin-right: 39%;padding-bottom: 5px;"><i class="fa fa-file-text fa-2x"></i> Actualizar leyenda </h1>        
+        <h1 style="font-size: 45px;font-weight: bold;border-bottom: 1px solid #DBDBDB;margin-right: 33%;padding-bottom: 5px;"><i class="fa fa-file-text fa-2x"></i> Actualizar leyenda </h1>        
         <div id="data" class="col-md-8">
             <?php if (isset($msgresponse)) {
                     if ($msgresponse == 'success') { ?>
@@ -72,10 +85,15 @@
                 <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
                 <span class="label label-success" style="font-size: 25px">ÉXITO!</span>&nbsp;&nbsp;&nbsp;<span style="font-size: 22px;"><strong>La leyenda fué actualizada...</strong></span>
             </div>
-            <?php } else { ?>
+            <?php } elseif ($msgresponse == 'error')  { ?>
             <div class="alert alert-danger alert-dismissible" role="alert" style="margin: 10px auto 20px auto;">
                 <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
                 <span class="label label-danger" style="font-size: 25px">ERROR!</span>&nbsp;&nbsp;&nbsp;<span style="font-size: 22px;"><strong>Oh, ohh! Algo salió mal al actualizar la leyenda, favor de intentarlo mas tarde...</strong></span>
+            </div>
+            <?php } elseif ($msgresponse == 'formerror')  { ?>
+            <div class="alert alert-danger alert-dismissible" role="alert" style="margin: 10px auto 20px auto;">
+                <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <span class="label label-danger" style="font-size: 25px">ERROR!</span>&nbsp;&nbsp;&nbsp;<span style="font-size: 22px;"><strong>Oh, ohh! Quizá falte información... Favor de verificar...</strong></span>
             </div>
             <?php } }?>
             <?php if(isset($leyendaactual)) { ?>
@@ -88,9 +106,8 @@
                 <span id="masinfoleyenda" 
                    style="float: right; cursor: pointer;"
                    data-toggle="popover" 
-                   data-trigger="focus"
-                   
-                   data-contentwrapper=".contentleyendainfo"                   
+                   data-trigger="focus"                   
+                   data-contentwrapper=".contentleyendainfo"
                    rel="popover"
                    data-contentwrapper=".contentinfoleyenda"><i class="fa fa-info-circle fa-1x"></i> [ Ver mas información... ]</span>                   
             </div>
@@ -114,6 +131,7 @@
                 </div>                
             </div>            
             <?php } ?>
+
             <form id="formularioleyenda"  action="<?php echo site_url('leyenda'); ?>" onReset="resetform()" method="post" accept-charset="utf-8">
                 <div id="leyenda_formbody">
                     <div class="espacio">
@@ -155,9 +173,9 @@
                     <div class="col-md-2">
                         <i class="fa fa-info-circle fa-5x"></i>
                     </div>
-                    <div class="col-md-10" style="padding: 16px 0 34px 18px;">
+                    <div class="col-md-8" style="padding: 16px 0 34px 26px;">
                         <span style="font-size: 28px; font-weight: bold; display: block; ">Información</span>
-                        <span style="font-size: 13px; position: absolute; margin-top: -8;">que debe saber...</span>
+                        <span style="font-size: 13px; position: absolute; margin-top: -8px;">que debe saber...</span>
                     </div>
                 </div>
                
@@ -243,7 +261,7 @@
         
         $('#masinfoleyenda').popover({
             html:true,
-            placement:'left',
+            placement:'auto',
             title: 'Información sobre la leyenda',
             content:function(){
                 return $('.contentleyendainfo').html();

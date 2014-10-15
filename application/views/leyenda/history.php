@@ -43,11 +43,24 @@
     #infoareahistory .tamaniolabel{
         font-size: 16px;
     }
+    
+    @media screen and (max-width: 991px) {
+        #infoareahistory {
+          padding-top: 20px;
+        }
+        #actionhideinfoareahistory {
+            display: none;
+        }
+        #infoareahistory #info {
+            border-left: none !Important;
+        }
+    }
+    
 </style>
 
     <div class="row history_formcontent">
         <i id="actionshowinfoareahistory" class="fa fa-info-circle fa-5x" title="Mostrar información de la página" style="float: right;margin-top: 43px;color: #941E1E;cursor: pointer; display: none"></i>
-        <h1 style="font-size: 45px;font-weight: bold;border-bottom: 1px solid #DBDBDB;margin-right: 39%;padding-bottom: 5px;"><i class="fa fa-table fa-2x"></i> Histórico de leyendas</h1>
+        <h1 style="font-size: 45px;font-weight: bold;border-bottom: 1px solid #DBDBDB;margin-right: 33%;padding-bottom: 5px;"><i class="fa fa-table fa-2x"></i> Histórico de leyendas</h1>
         <br/>
         <div id="data" class="col-md-9">
             <?php echo $historytable; ?>
@@ -59,7 +72,7 @@
                     <div class="col-md-2">
                         <i class="fa fa-info-circle fa-5x"></i>
                     </div>
-                    <div class="col-md-6" style="padding: 16px 0 0 34px;">
+                    <div class="col-md-6" style="padding: 16px 0 0 37px;">
                         <span style="font-size: 28px; font-weight: bold; display: block; ">Información</span>
                         <span style="font-size: 13px; position: absolute; margin-top: -8px;">que debe saber...</span>
                     </div>

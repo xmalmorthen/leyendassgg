@@ -24,6 +24,12 @@ header .textos {
   font-size: 15px;
   color: #7e7e7e;
 }
+@media screen and (max-width: 991px) {
+  header .textos {    
+    display: none;
+  }
+}
+
 footer {
   height: 100px;
   background-color: #119548;

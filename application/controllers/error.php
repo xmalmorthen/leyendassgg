@@ -24,6 +24,10 @@ class error extends CI_Controller {
         $this->load->view('errors/noscript');
     }
     
+    function nomobile(){
+        $this->load->view('errors/nomobile');
+    }
+    
 }
 
 /* End of file errorlog.php */

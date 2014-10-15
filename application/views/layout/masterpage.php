@@ -26,7 +26,7 @@
             <div class="adorno2"></div>
             <div class="container">                
                 <div class="row">
-                    <div class="col-sm-6">
+                    <div class="col-sm-7">
                         <img src="<?php echo base_url('application/assets/images/layout/logo.png'); ?>" class="logo"/>
                         <div class="textos">
                             <span class="negritas">SISTEMA PARA LA ADMINISTRACIÓN</span><br />
@@ -62,8 +62,8 @@
                 <div id="loaderdiv"></div>
             </div>   
             <div class="optimized" style="text-align: right; color: #E0E0E0; font-size: 12px">
-                <span>Sitio desarrollado en HTML5,<br/>
-                      optimizado para Google Chrome, <br/>Mozilla Firefox, Internet Explorer 9 o superior</span>
+                <span>Sitio desarrollado en HTML5, optimizado para resolución mínima de 1024 x 768 pixeles,<br/>
+                      navegadores Web Google Chrome, Mozilla Firefox, Internet Explorer 9 o superior</span>
             </div>
             
         </footer>        

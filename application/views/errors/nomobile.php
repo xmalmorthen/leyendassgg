@@ -24,7 +24,7 @@
                 padding: 0 15%;
                 padding-top: 20px;
                 background-color: #DFDFDF;
-                min-height: 83px;
+                min-height: 70px;
             }
             .header .logo {
                 float: left;
@@ -46,7 +46,7 @@
                 float: left;  
                 text-align: center;
                 max-width: 40%;
-                margin: 35px 0 150px 11%;
+                margin: 100px 0 150px 11%;
             }
             .infoarea .titleerr{
                 font-size: 85px;
@@ -95,9 +95,9 @@
             <img class="errorimage" src="<?php echo base_url('application/assets/images/layout/error.png'); ?>" alt="Error">
             <div class="infoarea">
                 <span class="titleerr">¡Oh, no!</span><br/>
-                <span class="subt">Algo salió mal.</span><br/>
-                <span>Las configuraciones de su navegador no permiten la ejecución de <b style="font-size: 30px; color:#790F0F">SCRIPTS</b>, para un óptimo funcionamiento del sitio se requiere habilitar dicha funcionalidad...</span><br/><br/>
-                <span>Le recomendamos habilitar la ejecución de SCRIPTS en su navegador y visitarnos hasta entonces...</span>
+                <span class="subt">Atención.</span><br/>
+                <span>Actualmente el sitio no tiene soporte para dispositivos móviles</span><br/><br/>
+                <span>Disculpe las molestias...</span>
             </div>
         </div>
         <div class="footer">

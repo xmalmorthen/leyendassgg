@@ -107,8 +107,8 @@
                 <span>DE LEYENDAS</span>
             </div>
             <div class="optimized" style="text-align: right; color: #E0E0E0; font-size: 12px">
-                <span>Sitio desarrollado en HTML5,<br/>
-                      optimizado para Google Chrome, <br/>Mozilla Firefox, Internet Explorer 9 o superior</span>
+                <span>Sitio desarrollado en HTML5, optimizado para resolución mínima de 1024 x 768 pixeles,<br/>
+                      navegadores Web Google Chrome, Mozilla Firefox, Internet Explorer 9 o superior</span>
             </div>
         </div>
     </body>

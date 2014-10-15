@@ -36,33 +36,39 @@ class leyenda extends CI_Controller {
         $this->model['numDecreto'] = $leyendastr['numDecreto'];
         $this->model['fechaDecreto'] = $leyendastr['fechaDecreto'];
         $this->model['fechaRegistro'] = $leyendastr['fechaRegistro'];
+        $this->model['msgresponse'] = $this->session->flashdata('msgresponse');
         
         if ($this->input->post()){                       
             $this->form_validation->set_message('required', 'El campo es requerido');       
             $this->form_validation->set_error_delimiters('<div class="error"><i class="fa fa-exclamation-triangle"></i><span>','</span></div>');
             $this->form_validation->set_rules('decreto', 'Decreto', 'trim|required|xss_clean');
             $this->form_validation->set_rules('fechadecreto', 'Fechadecreto', 'trim|required|xss_clean');
-            $this->form_validation->set_rules('textoleyenda', 'Textoleyenda', 'trim|required|xss_clean|callback_insertleyenda');
+            $this->form_validation->set_rules('textoleyenda', 'Textoleyenda', 'trim|required|xss_clean');
 
             if($this->form_validation->run() == TRUE)
             {
-                //redirect('leyenda');
+                if ( $this->_insertleyenda($this->input->post('textoleyenda')) === TRUE){
+                    $this->session->set_flashdata('msgresponse', 'success');
+                    redirect('leyenda/index');
+                } else {
+                    $this->model['msgresponse'] = 'error';
+                }                    
+            } else {
+                $this->model['msgresponse'] = 'formerror';
             }
         }
         $this->_showformpage('leyenda/index');
     }
     
-    function insertleyenda($textoleyenda)
+    private function _insertleyenda($textoleyenda)
     {      
         $decreto = $this->input->post('decreto');
         $fechadecreto = $this->input->post('fechadecreto');
         
-        if ($this->leyenda_model->insert($decreto,$fechadecreto,$textoleyenda)) {            
-            $this->model['msgresponse'] = 'success';
+        if ($this->leyenda_model->insert($decreto,$fechadecreto,$textoleyenda)) {
             return TRUE;
         }else{
-            $this->form_validation->set_message('insertleyenda','');
-            $this->model['msgresponse'] = 'error';
+            $this->form_validation->set_message('insertleyenda','');            
             return FALSE;
         }
     }
