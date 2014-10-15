@@ -1,6 +1,6 @@
 p{ margin: 0 0 2px;}
 body {
-  background: url("../images/logon/fondo2.jpg") no-repeat center center fixed;
+  background: url("../../images/logon/fondo2.jpg") no-repeat center center fixed;
   height: 100%;
   background-size: 100% 100%;
 }
@@ -10,7 +10,7 @@ body {
   width: 400px;
   padding: 25px;
   text-align: justify;
-  margin: 30px auto 0 auto;
+  margin: 30px auto 200px auto;
   float: right;
   border: 2px solid rgba(255, 255, 255, 0.68);    
   border-radius: 6px;
@@ -48,10 +48,10 @@ body {
   margin-top: 24px;    
 }
 #login-box .inputarea .inputUser {
-  background-image: url("../images/logon/icon-user.png");  
+  background-image: url("../../images/logon/icon-user.png");  
 }
 #login-box .inputarea .inputPassword {
-  background-image: url("../images/logon/icon-lock.png");
+  background-image: url("../../images/logon/icon-lock.png");
 }
 #login-box .btn-entrar {
   background-color: #119548;
@@ -64,6 +64,13 @@ body {
 #login-box .btn-entrar:hover {
   background-color: #15b457;
 }
+#login-box .controles {
+    padding-top: 20px; text-align: right;
+}
 .field-validation-error {
   color: #f00;
+}
+.errorarea{
+    text-align: left;
+    padding: 20px 0px 0px 0px !Important;
 }

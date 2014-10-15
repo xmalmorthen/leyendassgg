@@ -1,11 +1,5 @@
-<style type="text/css">
-    .errorarea{
-        text-align: left;
-        padding: 20px 0px 0px 0px !Important;
-    }    
-</style>
-
-<div id="login-box" style="margin-bottom: 200px;">
+<link rel="stylesheet" href="<?php echo base_url('application/assets/css/logon/logon.css'); ?>">
+<div id="login-box">
     <?php echo form_open('logon'); ?>
         <input type="hidden" id="rout" name="rout" value="<?php echo isset($rout) ? $rout : ''; ?>"/>
         <table>
@@ -43,10 +37,10 @@
             </tr>
             <tr>
                 <td>
-                    <div class="controles" style="padding-top: 20px; text-align: right;">
+                    <div class="controles">
                         <input id="loginbtnsubmit" type="submit" value="Entrar" class="btn btn-success btn-lg" />
                     </div>
                 </td>
             </tr>
-        </table>    
+        </table>
 </div>

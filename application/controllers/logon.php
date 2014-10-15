@@ -11,9 +11,7 @@ class logon extends CI_Controller {
         $this->load->library('form_validation');
     }
     
-    private function _showloginpage(){       
-        $this->model['css'] = "<link href=" . base_url('application/assets/css/logOn.css') . " rel='stylesheet' />";        
-        
+    private function _showloginpage(){
         $this->model['content'] = $this->load->view('logon/index',$this->model,TRUE);
         $this->load->view('layout/masterpage',$this->model);
     }
