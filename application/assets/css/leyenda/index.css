@@ -1,0 +1,178 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 15/10/2014, 04:07:39 PM
+    Author     : Xmall
+*/
+.leyenda_formcontent{
+    padding: 0px 30px 120px 30px;
+}
+
+.leyenda_formcontent #actionshowinfoarealeyenda {
+    float: right;
+    margin-top: 43px;
+    color: #941E1E;
+    cursor: pointer;
+    display: none
+}
+
+.leyenda_formcontent #title{
+    font-size: 45px;
+    font-weight: bold;
+    border-bottom: 1px solid #DBDBDB;
+    margin-right: 33%;
+    padding-bottom: 5px;
+}
+
+#data .alert {
+    margin: 10px auto 20px auto;
+}
+
+#data .alert .label {
+    font-size: 25px;
+}
+
+#data .alert .cuerpomensaje {
+    font-size: 22px;
+}
+
+#data #actualleyendaarea {
+    padding: 0px 5px 35px 5px;
+    border: 2px solid rgba(236, 236, 236, 1);
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius:5px;
+}
+
+#actualleyendaarea p {
+    padding: 0 23px;
+    color: #7e7e7e;
+}
+
+#actualleyendaarea #masinfoleyenda {
+    float: right; 
+    cursor: pointer;
+}
+
+.contentleyendainfo {
+    display: none;
+}
+
+#leyenda_formbody {
+    padding: 20px;
+}
+
+#leyenda_formbody .espacio{
+    padding: 10px 0;        
+}
+
+#leyenda_formbody i{
+    margin-left: -5px;
+}
+
+#leyenda_formbody div span{
+    font-size: 20px;
+    color: #575757;
+}
+
+#leyenda_formbody textArea{
+    max-width: 100%;
+    max-height: 150px;
+}
+
+#leyenda_formbody .btn-entrar {
+    background-color: #119548;
+    transition: background-color 0.5s ease-in;
+    color: #fff;
+    border: none;
+    padding: 15px 30px;
+    float: right;
+}
+
+#leyenda_formbody .btn-entrar:hover {
+    background-color: #15b457;
+}
+
+#leyenda_formbody .controles{
+    padding-top: 20px; 
+    float: right;
+}
+
+.field-validation-error {
+    color: #f00;
+}
+
+#infoarealeyenda #info {
+    border-left: 1px solid rgba(209, 209, 209, 0.5);
+}
+
+#actionhideinfoarealeyenda{
+    float: right;
+    color: #941E1E;
+    cursor: pointer;
+}
+
+#infoarealeyenda span{
+    font-size: 20px;
+
+}
+#infoarealeyenda .espacio{
+    padding: 17px 0 0 20px;
+}
+
+.popover{
+    width:400px;
+    max-width: 450px;
+}
+.popover .row{
+    padding: 5px 0;
+}
+.popover .popovertitle {
+    text-align: right;
+    color: #7e7e7e;
+    font-size: 14px;
+}
+.popover .popoverdata {
+    font-size: 18px;
+    color: #525252;
+    font-weight: bold;
+}
+#infoarealeyenda .tamaniolabel{
+    font-size: 16px;
+}
+
+#info .titleinfo {
+    padding: 16px 0 34px 26px;
+}
+
+#info .titleinfo  .superior{
+    font-size: 28px; 
+    font-weight: bold; 
+    display: block; 
+}
+
+#info .titleinfo  .inferior{
+    font-size: 13px; 
+    position: absolute; 
+    margin-top: -8px;
+}
+
+#info .bodyinfo{
+    line-height: 22px;
+    font-size: 12px
+}
+
+@media screen and (max-width: 991px) {
+    #infoarealeyenda {
+      padding-top: 80px;
+    }
+    #actionhideinfoarealeyenda {
+        display: none;
+    }
+    #infoarealeyenda #info {
+        border-left: none !Important;
+    }
+}
