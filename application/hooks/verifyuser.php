@@ -19,6 +19,10 @@ class verifyuser{
             redirect('error/nomobile');
         }        
         
+        if (in_array($controller, $params)) {
+            return;
+        }
+        
         $user = $this->_CI->session->userdata("logged_in");
 
         //Si no está el usuario autentificado, redirecciona a login.
