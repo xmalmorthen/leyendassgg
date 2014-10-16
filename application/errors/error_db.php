@@ -3,7 +3,7 @@
         <title><?php echo isset($title) ? $title : 'SAL - Oh, ohh...!!!' ; ?></title>
         <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
         <link href="http://www.colima-estado.gob.mx/ci/css/bs3/bootstrap.min.css" rel="stylesheet" />
-        <link href="<?php echo base_url('application/assets/css/master.css'); ?>" rel="stylesheet" />
+        <link href="<?php echo base_url(ASSETS .'css/master.css'); ?>" rel="stylesheet" />
         <style type="text/css">
             a:link, a:hover, a:visited
             {   
@@ -53,7 +53,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-sm-12">
-                        <img src="<?php echo base_url('application/assets/images/layout/logo.png'); ?>" class="logo"/>
+                        <img src="<?php echo base_url(ASSETS .'images/layout/logo.png'); ?>" class="logo"/>
                         <div class="textos">
                             <span class="negritas">SISTEMA PARA LA ADMINISTRACIÓN</span><br />
                             <span>DE LEYENDAS</span>
@@ -66,7 +66,7 @@
             <article id="seccionContenido" class="container">
                 <div class="row margensuperior margeninferior">
                     <div class="col-md-8" style="text-align: center;">
-                        <img src="<?php echo base_url('application/assets/images/layout/error.png'); ?>" alt="Error" height="500" width="500">
+                        <img src="<?php echo base_url(ASSETS .'images/layout/error.png'); ?>" alt="Error" height="500" width="500">
                     </div>
                     <div class="col-md-4 infoarea">
                         <span class="negrita titleerr">¡Oh, no!</span><br/>
@@ -82,7 +82,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-sm-12">
-                        <img src="<?php echo base_url('application/assets/images/layout/logo_2.png'); ?>" class="logo" />
+                        <img src="<?php echo base_url(ASSETS .'images/layout/logo_2.png'); ?>" class="logo" />
                         <div class="textos">
                             <span class="negritas">SISTEMA PARA LA ADMINISTRACIÓN</span><br />
                             <span>DE LEYENDAS</span>

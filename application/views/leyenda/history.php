@@ -1,4 +1,4 @@
-<link rel="stylesheet" href="<?php echo base_url('application/assets/css/leyenda/history.css'); ?>">
+<link rel="stylesheet" href="<?php echo base_url(ASSETS .'css/leyenda/history.css'); ?>">
 <div class="row history_formcontent">
     <i id="actionshowinfoareahistory" class="fa fa-info-circle fa-5x" title="Mostrar información de la página" style="float: right;margin-top: 43px;color: #941E1E;cursor: pointer; display: none"></i>
     <h1 style="font-size: 45px;font-weight: bold;border-bottom: 1px solid #DBDBDB;margin-right: 33%;padding-bottom: 5px;"><i class="fa fa-table fa-2x"></i> Histórico de leyendas</h1>
@@ -34,7 +34,7 @@
         </div>
     </div>
 </div>
-<script src="<?php echo base_url('application/assets/js/leyenda/history.js'); ?>"></script>
+<script src="<?php echo base_url(ASSETS .'js/leyenda/history.js'); ?>"></script>
 <script language="JavaScript" type="text/javascript">         
     $(document).ready(function() {        
         $('#historytable').DataTable({
@@ -44,7 +44,7 @@
             "bProcessing": true,
             "pagingType": "full_numbers",
             "language": { 
-                "url": "<?php echo base_url(); ?>application/assets/dataTables-1.10.3/media/resourses/lang/datatables.spanish.lang"                
+                "url": "<?php echo base_url(ASSETS); ?>/dataTables-1.10.3/media/resourses/lang/datatables.spanish.lang"                
             },
             "columnDefs": [
                 {

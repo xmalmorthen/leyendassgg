@@ -85,14 +85,14 @@
         <div class="adorno1"></div>
         <div class="adorno2"></div>
         <div class="header">
-            <img src="<?php echo base_url('application/assets/images/layout/logo.png'); ?>" class="logo"/>
+            <img src="<?php echo base_url(ASSETS .'images/layout/logo.png'); ?>" class="logo"/>
             <div class="textos">
                 <span class="negritas">SISTEMA PARA LA ADMINISTRACIÓN</span><br />
                 <span>DE LEYENDAS</span>
             </div>
         </div>
         <div class="content">
-            <img class="errorimage" src="<?php echo base_url('application/assets/images/layout/error.png'); ?>" alt="Error">
+            <img class="errorimage" src="<?php echo base_url(ASSETS .'images/layout/error.png'); ?>" alt="Error">
             <div class="infoarea">
                 <span class="titleerr">¡Oh, no!</span><br/>
                 <span class="subt">Atención.</span><br/>
@@ -101,7 +101,7 @@
             </div>
         </div>
         <div class="footer">
-            <img src="<?php echo base_url('application/assets/images/layout/logo_2.png'); ?>" class="logo" />
+            <img src="<?php echo base_url(ASSETS .'images/layout/logo_2.png'); ?>" class="logo" />
             <div class="textos">
                 <span class="negritas">SISTEMA PARA LA ADMINISTRACIÓN</span><br />
                 <span>DE LEYENDAS</span>

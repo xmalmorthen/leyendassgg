@@ -1,4 +1,4 @@
-<link rel="stylesheet" href="<?php echo base_url('application/assets/css/logon/logon.css'); ?>">
+<link rel="stylesheet" href="<?php echo base_url(ASSETS .'css/logon/logon.css'); ?>">
 <div id="login-box">
     <?php echo form_open('logon'); ?>
         <input type="hidden" id="rout" name="rout" value="<?php echo isset($rout) ? $rout : ''; ?>"/>

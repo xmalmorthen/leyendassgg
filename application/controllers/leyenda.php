@@ -24,9 +24,9 @@ class leyenda extends CI_Controller {
 
     public function index()
     {
-        $this->model['css'] = "<link href=" . base_url('application/assets/bootstrap-datepicker/css/datepicker3.css') . " rel='stylesheet' />";
-        $this->model['js'] = "<script src=" . base_url('application/assets/bootstrap-datepicker/js/bootstrap-datepicker.js') . "></script>" .
-                             "<script src=" . base_url('application/assets/bootstrap-datepicker/js/locales/bootstrap-datepicker.es.js') . "></script>";
+        $this->model['css'] = "<link href=" . base_url(ASSETS .'bootstrap-datepicker/css/datepicker3.css') . " rel='stylesheet' />";
+        $this->model['js'] = "<script src=" . base_url(ASSETS .'bootstrap-datepicker/js/bootstrap-datepicker.js') . "></script>" .
+                             "<script src=" . base_url(ASSETS .'bootstrap-datepicker/js/locales/bootstrap-datepicker.es.js') . "></script>";
 
         $leyendastr = $this->leyenda_model->getLeyenda();
             
@@ -94,8 +94,8 @@ class leyenda extends CI_Controller {
             $this->model['historytable'] = $this->table->generate();
         }
         
-        $this->model['css'] = "<link href=" . base_url('application/assets/dataTables-1.10.3/media/css/jquery.dataTables.css') . " rel='stylesheet' />";
-        $this->model['js'] = "<script src=" . base_url('application/assets/dataTables-1.10.3/media/js/jquery.dataTables.js') . "></script>        ";
+        $this->model['css'] = "<link href=" . base_url(ASSETS .'dataTables-1.10.3/media/css/jquery.dataTables.css') . " rel='stylesheet' />";
+        $this->model['js'] = "<script src=" . base_url(ASSETS .'dataTables-1.10.3/media/js/jquery.dataTables.js') . "></script>        ";
                 
         $this->_showformpage('leyenda/history');        
     }

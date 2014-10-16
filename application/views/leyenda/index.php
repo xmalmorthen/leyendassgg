@@ -1,4 +1,4 @@
-<link rel="stylesheet" href="<?php echo base_url('application/assets/css/leyenda/index.css'); ?>">
+<link rel="stylesheet" href="<?php echo base_url(ASSETS .'css/leyenda/index.css'); ?>">
 <div class="row leyenda_formcontent">
     <i id="actionshowinfoarealeyenda" class="fa fa-info-circle fa-5x" title="Mostrar información de la página"></i>
     <h1 id="title"><i class="fa fa-file-text fa-2x"></i> Actualizar leyenda </h1>        
@@ -117,4 +117,4 @@
         </div>
     </div>
 </div>
-<script src="<?php echo base_url('application/assets/js/leyenda/index.js'); ?>"></script>
+<script src="<?php echo base_url(ASSETS .'js/leyenda/index.js'); ?>"></script>
