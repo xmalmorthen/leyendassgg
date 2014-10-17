@@ -76,7 +76,7 @@
                     <?php echo form_error('textoleyenda'); ?>
                 </div>
                 <div class="controles">                    
-                    <input type="submit" onClick="submitDetailsForm()" value="Guardar" class="btn btn-success btn-lg"  data-toggle="tooltip" data-placement="top" title="Actualizar leyenda"/>
+                    <input type="submit" onClick="submitDetailsForm()" value="Guardar" class="btn btn-success btn-lg"  data-toggle="tooltip" data-placement="top" title="Guardar leyenda"/>
                     <span>&nbsp;&nbsp;&nbsp;</span>
                     <input onclick="resetform()" type="button" value="Limpiar" class="btn btn-danger btn-lg" data-toggle="tooltip" data-placement="top" title="Limpiar formulario" />
                 </div>
