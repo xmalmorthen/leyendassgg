@@ -36,17 +36,17 @@
             .content{
                 padding: 0 20%;
                 padding-top: 20px;
+                text-align: center;
             }
             .content .errorimage{
-                height:"500";
-                width:"500";
-                float: left;
+                height:400px;
+                width:400px;
             }
             .content .infoarea{
-                float: left;  
                 text-align: center;
                 max-width: 40%;
-                margin: 35px 0 150px 11%;
+                display: inline-block;
+                margin: 0 0 150px 0;
             }
             .infoarea .titleerr{
                 font-size: 85px;

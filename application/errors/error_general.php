@@ -3,7 +3,7 @@
         <title><?php echo isset($title) ? $title : 'SAL - Oh, ohh...!!!' ; ?></title>
         <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
         <link href="http://www.colima-estado.gob.mx/ci/css/bs3/bootstrap.min.css" rel="stylesheet" />
-        <link href="<?php echo base_url(ASSETS .'css/master.css'); ?>" rel="stylesheet" />
+        <link href="<?php echo base_url(ASSETS .'css/layout/master.css'); ?>" rel="stylesheet" />
         <style type="text/css">
             a:link, a:hover, a:visited
             {   

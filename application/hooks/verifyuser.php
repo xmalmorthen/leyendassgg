@@ -16,7 +16,7 @@ class verifyuser{
                 
         if ($this->_CI->agent->is_mobile())
         {
-            redirect('error/nomobile');
+            exit($this->_CI->load->view('errors/nomobile',NULL,TRUE));
         }        
         
         if (in_array($controller, $params)) {
