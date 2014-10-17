@@ -8,7 +8,7 @@ and open the template in the editor.
     Author     : Xmall
 */
 .leyenda_formcontent{
-    padding: 0px 30px 120px 30px;
+    padding: 0px 30px 40px 30px;
 }
 
 .leyenda_formcontent #actionshowinfoarealeyenda {
@@ -162,7 +162,9 @@ and open the template in the editor.
 
 #info .bodyinfo{
     line-height: 22px;
-    font-size: 12px
+    font-size: 12px;
+    text-align: justify;
+    
 }
 
 @media screen and (max-width: 991px) {

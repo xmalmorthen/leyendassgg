@@ -1,3 +1,7 @@
+html, body {
+  height: 100%;
+}
+
 a:visited,a:link {   
     text-decoration:none;
     color: #868686;
@@ -7,6 +11,20 @@ body {
   background: url("../../images/layout/fondo2.jpg") no-repeat center center fixed;
   height: 100%;
   background-size: 100% 100%;
+}
+
+.page-wrap {
+  min-height: 100%;
+  /* equal to footer height */
+  margin-bottom: -100px; 
+}
+.page-wrap:after {
+  content: "";
+  display: block;
+}
+.site-footer, .page-wrap:after {
+  /* .push must be the same height as footer */
+  height: 100px; 
 }
 
 header {
@@ -28,7 +46,8 @@ header .textos {
 }
 
 header #logged_data{
-    float:right; padding-top: 17px;
+    float:right; 
+    padding-top: 24px;
 }
 
 @media screen and (max-width: 991px) {
@@ -38,13 +57,17 @@ header #logged_data{
 }
 
 footer {
-  height: 100px;
+  /*height: 100px;
   background-color: #119548;
-  position: fixed;
   bottom: 0;
   left: 0;
-  right: 0;
-  z-index: 10;
+  right: 0;*/
+  
+  height: 100px;
+  background-color: #119548;
+  position: relative;
+  clear: both;  
+  z-index: 10;  
 }
 
 footer .logo {
@@ -99,8 +122,10 @@ footer .textos {
 }
 
 footer .optimized {
-    position: absolute;
     right: 10px;
-    bottom: 1px;   
-    text-align: right; color: #E0E0E0; font-size: 12px
+    bottom: 24px;
+    text-align: right;
+    color: #E0E0E0;
+    font-size: 12px;
+    position: relative;
 }

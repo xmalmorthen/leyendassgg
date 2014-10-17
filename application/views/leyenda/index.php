@@ -7,17 +7,17 @@
                 if ($msgresponse == 'success') { ?>
         <div class="alert alert-success alert-dismissible" role="alert">
             <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-            <span class="label label-success">ÉXITO!</span>&nbsp;&nbsp;&nbsp;<span class="cuerpomensaje"><strong>La leyenda fué actualizada...</strong></span>
+            <span class="label label-success">ÉXITO!</span>&nbsp;&nbsp;&nbsp;<span class="cuerpomensaje"><strong>La leyenda se actualizó correctamente.</strong></span>
         </div>
         <?php } elseif ($msgresponse == 'error')  { ?>
         <div class="alert alert-danger alert-dismissible" role="alert">
             <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-            <span class="label label-danger">ERROR!</span>&nbsp;&nbsp;&nbsp;<span class="cuerpomensaje"><strong>Oh, ohh! Algo salió mal al actualizar la leyenda, favor de intentarlo mas tarde...</strong></span>
+            <span class="label label-danger">ERROR!</span>&nbsp;&nbsp;&nbsp;<span class="cuerpomensaje"><strong>Ocurrió un problema la leyenda, favor de intentarlo mas tarde.</strong></span>
         </div>
         <?php } elseif ($msgresponse == 'formerror')  { ?>
         <div class="alert alert-danger alert-dismissible" role="alert">
             <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-            <span class="label label-danger">ERROR!</span>&nbsp;&nbsp;&nbsp;<span class="cuerpomensaje"><strong>Oh, ohh! Quizá le falte información... Favor de verificar...</strong></span>
+            <span class="label label-danger">ERROR!</span>&nbsp;&nbsp;&nbsp;<span class="cuerpomensaje"><strong>Favor de ingresar los datos requeridos.</strong></span>
         </div>
         <?php } }?>
         <?php if(isset($leyendaactual)) { ?>
@@ -26,7 +26,7 @@
             <p>
                 <?php echo isset($leyendaactual) ? $leyendaactual : ''; ?>
             </p>
-            <span id="masinfoleyenda" data-toggle="popover" data-trigger="focus" data-contentwrapper=".contentleyendainfo" rel="popover" data-contentwrapper=".contentinfoleyenda"><i class="fa fa-info-circle fa-1x"></i> [ Ver más información... ]</span>
+            <span id="masinfoleyenda" data-toggle="popover" data-trigger="focus" data-contentwrapper=".contentleyendainfo" rel="popover" data-contentwrapper=".contentinfoleyenda"><i class="fa fa-info-circle fa-1x"></i> [ Ver detalle. ]</span>
         </div>
 
         <div class="contentleyendainfo">
@@ -97,7 +97,7 @@
             </div>
 
             <div class="bodyinfo">
-                <span>Formulario para actualizar la leyenda.</span>
+                <span>Pantalla para actualizar la leyenda.</span>
                 <span class="label label-danger tamaniolabel">Nota:</span> <b>Únicamente se permite actualizar la leyenda actual...</b>
                 <br/><br/>
                 La primer parte del formulario muestra la <span class="label label-success tamaniolabel">leyenda actual</span> que se utiliza en los sistemas para los formatos de pie de páginas, 

@@ -19,14 +19,14 @@
                 </div>
             </div>
 
-            <div style="line-height: 22px;font-size: 12px">
-                <span>Rejilla que muestra el histórico de leyendas que se han usado año con año.</span>
+            <div style="line-height: 22px;font-size: 12px; text-align: justify;">
+                <span>Lista que muestra las leyendas registradas en los últimos años.</span>
                 <br/><br/>
-                La columna <span class="label label-default tamaniolabel">Año</span> indica el año que es o fue utilizada la leyenda.
-                La columna <span class="label label-default tamaniolabel">Núm. Decreto</span> o <b>Número de decreto</b> indica el dato identificativo con el cual se decretó la leyenda.
-                La columna <span class="label label-default tamaniolabel">Leyenda</span> muestra la cadena de leyenda que es o fue utilizada en el año correspondiente.
-                La columna <span class="label label-default tamaniolabel">Fecha Decreto</span> especifica la fecha en que fue decretada la leyenda.
-                La columna <span class="label label-default tamaniolabel">Fecha Registro</span> indica la fecha en que se registró en el sistema la leyenda y por lo tanto a partir del cual el servicio WEB publicó la leyenda correspondiente.
+                La columna <span class="label label-default tamaniolabel">Año</span> indica el año en el que se utilizó la leyenda.
+                La columna <span class="label label-default tamaniolabel">Núm. de decreto</span> indica el número con el cual se identifica el decretó de la leyenda.
+                La columna <span class="label label-default tamaniolabel">Leyenda</span> muestra el texto de la leyenda utilizada en el año correspondiente.
+                La columna <span class="label label-default tamaniolabel">Fecha de decreto</span> se refiere a la fecha en que se decidió registrar la leyenda.
+                La columna <span class="label label-default tamaniolabel">Fecha de registro</span> indica la fecha en que se registró o actualizó la leyenda en el sistema.
                 <br/><br/>
                 La fila de la rejilla con color de <b>fondo oscuro</b> indica la <span class="label label-success tamaniolabel">leyenda actual</span>.
                 La rejilla permite filtrar los registros en el área de <span class="label label-success tamaniolabel">buscar</span>, así como <span class="label label-warning tamaniolabel">paginar</span> y cambiar los <span class="label label-warning tamaniolabel">resultados por página</span>

@@ -2,9 +2,6 @@ window.onbeforeunload = showloader;
 function showloader()
 {
     $.isLoading({ text: "Cargando..." });    
-        
-    /*var loader=document.getElementById("loaderdiv");
-    loader.style.display = 'block';*/
 }
 
 $(document).ready(function() {       

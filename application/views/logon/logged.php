@@ -3,7 +3,12 @@
     <div id="bienvenidalabel">
         <span class="texto_negrita texto_bienvenida">Bienvenido...!!!</span>
         <a class="logoutbtn" href="<?php echo site_url('logon/logout'); ?>" data-toggle="tooltip" data-placement="bottom" title="Cerrar sesión">
-            <i class="fa fa-sign-out fa-3x"></i>
+            <div>
+                <i class="fa fa-sign-out fa-3x"></i>
+            </div>
+            <div class="lbllogout">
+                Cerrar sesión
+            </div>
         </a>        
         <br/>
         <span class="texto_normal"><?php echo $name; ?></span>

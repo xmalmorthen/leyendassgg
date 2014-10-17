@@ -21,10 +21,18 @@ and open the template in the editor.
 
 #logged_data .texto_bienvenida {
     font-size: 20px;
-
 }   
 #logged_data .logoutbtn {
-    float: right; margin: -15px 0 0 10px;
+    float: right; margin: -24px 0 0 10px;
+}
+
+#bienvenidalabel .logoutbtn div{
+    text-align: center;    
+}
+
+#bienvenidalabel .lbllogout {
+    margin-top: -9px;
+    font-size: 11px;    
 }
 
 #logged_data #imguserlogin {

@@ -39,7 +39,7 @@ class leyenda extends CI_Controller {
         $this->model['msgresponse'] = $this->session->flashdata('msgresponse');
         
         if ($this->input->post()){                       
-            $this->form_validation->set_message('required', 'El campo es requerido');       
+            $this->form_validation->set_message('required', 'El dato es requerido');       
             $this->form_validation->set_error_delimiters('<div class="error"><i class="fa fa-exclamation-triangle"></i><span>','</span></div>');
             $this->form_validation->set_rules('decreto', 'Decreto', 'trim|required|xss_clean');
             $this->form_validation->set_rules('fechadecreto', 'Fechadecreto', 'trim|required|xss_clean');
@@ -81,10 +81,10 @@ class leyenda extends CI_Controller {
             $this->table->set_template(array ( 'table_open'  => '<table id="historytable" class="table table-hover" style="width:100% !Important;">' ));
             $this->table->set_heading(array (
                 'Año',
-                'Núm. Decreto',
+                'Núm. de decreto',
                 'Leyenda',
-                'Fecha Decreto',
-                'Fecha Registro',
+                'Fecha de decreto',
+                'Fecha de registro',
                 'Activo'
             ));            
 

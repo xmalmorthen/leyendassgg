@@ -23,35 +23,37 @@
         </script>
     </head>
     <body>
-        <noscript><meta http-equiv="refresh" content="0;url=<?php echo site_url('error/noscript'); ?>"></noscript>
-        <header>
-            <div class="adorno1"></div>
-            <div class="adorno2"></div>
-            <div class="container">                
-                <div class="row">
-                    <div class="col-sm-7">
-                        <img src="<?php echo base_url(ASSETS .'images/layout/logo.png'); ?>" class="logo"/>
-                        <div class="textos">
-                            <span class="negritas">SISTEMA PARA LA ADMINISTRACIÓN</span><br />
-                            <span>DE LEYENDAS</span>
+        <div class="page-wrap">
+            <noscript><meta http-equiv="refresh" content="0;url=<?php echo site_url('error/noscript'); ?>"></noscript>
+            <header>
+                <div class="adorno1"></div>
+                <div class="adorno2"></div>
+                <div class="container">                
+                    <div class="row">
+                        <div class="col-sm-7">
+                            <img src="<?php echo base_url(ASSETS .'images/layout/logo.png'); ?>" class="logo"/>
+                            <div class="textos">
+                                <span class="negritas">SISTEMA PARA LA ADMINISTRACIÓN</span><br />
+                                <span>DE LEYENDAS</span>
+                            </div>
                         </div>
+                        <?php if ($sess) { ?>
+                        <div id="logged_data" class="col-sm-5">
+                            <?php $this->load->view('logon/logged',$sess); ?>
+                        </div>
+                        <?php } ?>
                     </div>
-                    <?php if ($sess) { ?>
-                    <div id="logged_data" class="col-sm-5">
-                        <?php $this->load->view('logon/logged',$sess); ?>
-                    </div>
-                    <?php } ?>
-                </div>
-            </div>            
-        </header>
-        
-        <section>
-            <article id="seccionContenido" class="container">
-                <?php if ($sess) { $this->load->view('layout/menu'); } ?>
-                <?php echo isset($content) ? $content : NULL; ?>
-            </article>
-        </section>
-        <footer>
+                </div>            
+            </header>
+
+            <section>
+                <article id="seccionContenido" class="container">
+                    <?php if ($sess) { $this->load->view('layout/menu'); } ?>
+                    <?php echo isset($content) ? $content : NULL; ?>
+                </article>
+            </section>        
+        </div>
+        <footer class="site-footer">
             <div class="container">
                 <div class="row">
                     <div class="col-sm-12">

@@ -8,7 +8,7 @@ var bPreguntar = true;
 function preguntarAntesDeSalir()
 {
   if (bPreguntar)
-    return "¿Seguro que quieres salir?";
+    return "Hay información sin guardar.";
 }
 
 function submitDetailsForm() {
@@ -17,7 +17,7 @@ function submitDetailsForm() {
 }
 
 function resetform(){
-    if (confirm('Confirma la limpieza del formulario...?') == true) {
+    if (confirm('Confirma la limpieza del formulario.') == true) {
         window.onbeforeunload = showloader;
         return true;
     } else {
@@ -61,7 +61,7 @@ $(document).ready(function() {
     $('#masinfoleyenda').popover({
         html:true,
         placement:'auto',
-        title: 'Información sobre la leyenda',
+        title: 'Detalle de la leyenda',
         content:function(){
             return $('.contentleyendainfo').html();
         }
