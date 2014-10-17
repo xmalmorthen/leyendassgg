@@ -178,3 +178,7 @@ and open the template in the editor.
         border-left: none !Important;
     }
 }
+
+.modal-dialog modal-sm {
+    margin-top: 20% !Important;    
+}
