@@ -32,7 +32,7 @@ class leyenda_model extends CI_Model{
     public function insert($decreto,$fechadecreto,$textoleyenda) {
         try        
         {
-            $uri = $decreto . '/' . $fechadecreto . '/' . urlencode($textoleyenda);            
+            $uri = urlencode($decreto) . '/' . $fechadecreto . '/' . urlencode($textoleyenda);            
             $leyendasstr = $this->rest->get('setLeyenda/' . $uri);
             return $leyendasstr;
             return FALSE;
