@@ -16,14 +16,21 @@ function submitDetailsForm() {
     $("#formularioleyenda").submit();
 }
 
-function resetform(){
-    if (confirm('Confirma la limpieza del formulario.') == true) {
+function resetform(event){    
+    $('#ressetmodalformleyenda').modal();
+    
+    /*if (confirm('Confirma la limpieza del formulario.') == true) {
         window.onbeforeunload = showloader;
         return true;
     } else {
         return false;
-    } 
+    } */
 }
+
+$('#acceptressetformleyenda').click(function(){    
+    document.getElementById("formularioleyenda").reset();
+    $('#ressetmodalformleyenda').modal('hide');
+});
 
 var showleyendainfoarea = function(){
         $('#actionshowinfoarealeyenda').hide();

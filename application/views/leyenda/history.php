@@ -28,8 +28,8 @@
                 La columna <span class="label label-default tamaniolabel">Fecha de decreto</span> se refiere a la fecha en que se decidió registrar la leyenda.
                 La columna <span class="label label-default tamaniolabel">Fecha de registro</span> indica la fecha en que se registró o actualizó la leyenda en el sistema.
                 <br/><br/>
-                La fila de la rejilla con color de <b>fondo oscuro</b> indica la <span class="label label-success tamaniolabel">leyenda actual</span>.
-                La rejilla permite filtrar los registros en el área de <span class="label label-success tamaniolabel">buscar</span>, así como <span class="label label-warning tamaniolabel">paginar</span> y cambiar los <span class="label label-warning tamaniolabel">resultados por página</span>
+                La fila con color de <strong>fondo oscuro</strong> indica la <span class="label label-success tamaniolabel">leyenda actual</span>. 
+                En la lista se permite filtrar los registros en el campo <span class="label label-success tamaniolabel">Buscar</span>, así como <span class="label label-warning tamaniolabel">paginar</span> y cambiar el <span class="label label-warning tamaniolabel">número de registros</span> a mostrar por página.
             </div>
         </div>
     </div>

@@ -49,7 +49,7 @@
         </div>            
         <?php } ?>
 
-        <form id="formularioleyenda"  action="<?php echo site_url('leyenda'); ?>" onReset="resetform()" method="post" accept-charset="utf-8">
+        <form id="formularioleyenda"  action="<?php echo site_url('leyenda'); ?>" method="post" accept-charset="utf-8">
             <div id="leyenda_formbody">
                 <div class="espacio">
                     <i class="fa fa-asterisk"></i>
@@ -78,10 +78,11 @@
                 <div class="controles">                    
                     <input type="submit" onClick="submitDetailsForm()" value="Guardar" class="btn btn-success btn-lg"  data-toggle="tooltip" data-placement="top" title="Actualizar leyenda"/>
                     <span>&nbsp;&nbsp;&nbsp;</span>
-                    <input type="reset" value="Limpiar" class="btn btn-danger btn-lg" data-toggle="tooltip" data-placement="top" title="Limpiar formulario" />
+                    <input onclick="resetform()" type="button" value="Limpiar" class="btn btn-danger btn-lg" data-toggle="tooltip" data-placement="top" title="Limpiar formulario" />
                 </div>
             </div>
         </form>
+        
     </div>
     <div id="infoarealeyenda">
         <div id="info" class="col-md-4">
@@ -117,4 +118,24 @@
         </div>
     </div>
 </div>
+
+<div class="modal fade bs-example-modal-sm" id="ressetmodalformleyenda" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-sm">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+        <h4 class="modal-title" id="myModalLabel">Limpiar pantalla</h4>
+      </div>
+      <div class="modal-body">
+        Confirma la limpieza del formulario.
+      </div>
+      <div class="modal-footer">
+        <button id="acceptressetformleyenda" type="button" class="btn btn-success">Aceptar</button>
+        <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>        
+      </div>
+    </div>
+  </div>
+</div>
+<script src="<?php echo base_url(ASSETS .'bootstrap-3.2.0-dist/js/modal.js'); ?>"></script>
 <script src="<?php echo base_url(ASSETS .'js/leyenda/index.js'); ?>"></script>
+
