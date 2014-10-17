@@ -22,7 +22,7 @@ class logon extends CI_Controller {
             $this->model['rout'] =  $this->session->flashdata('togourl');
             $this->_showloginpage();
         } else {
-            $this->form_validation->set_message('required', 'El campo es requerido');       
+            $this->form_validation->set_message('required', 'El dato es requerido');       
             $this->form_validation->set_error_delimiters('<div class="error"><i class="fa fa-exclamation-triangle"></i><span>','</span></div>');
 
             $this->form_validation->set_rules('username', 'Username', 'trim|required|xss_clean');
