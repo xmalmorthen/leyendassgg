@@ -8,12 +8,15 @@
         
         <link rel="stylesheet" href="<?php echo base_url(ASSETS . 'bootstrap-3.2.0-dist/css/bootstrap.css'); ?>">
         <link href="<?php echo base_url(ASSETS .'font-awesome-4.2.0/css/font-awesome.min.css'); ?>" rel="stylesheet">
-        <link href="<?php echo base_url(ASSETS .'css/layout/master.css'); ?>" rel="stylesheet" />        
+        <link href="<?php echo base_url(ASSETS .'css/layout/master.css'); ?>" rel="stylesheet" />
+        <link href="<?php echo base_url(ASSETS .'css/layout/isloading.css'); ?>" rel="stylesheet" />        
+        
         <?php echo isset($css) ? $css : ''; ?>
         
         <script src="<?php echo base_url(ASSETS .'js/jquery-1.11.1.min.js'); ?>"></script>
         <script src="<?php echo base_url(ASSETS .'js/jquery.cookie.js'); ?>"></script>
         <script src="<?php echo base_url(ASSETS .'js/modernizr.custom.98422.js'); ?>"></script>
+        <script src="<?php echo base_url(ASSETS .'js/jquery.isloading.js'); ?>"></script>
         <script languaje="javascript" type="text/javascript">
             var $base_url = '<?php echo base_url(); ?>',
                 $site_url = '<?php echo site_url(); ?>';
