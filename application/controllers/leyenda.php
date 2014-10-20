@@ -32,7 +32,8 @@ class leyenda extends CI_Controller {
         $this->model['msgresponse'] = $this->session->flashdata('msgresponse');
         
         if ($this->input->post()){                       
-            $this->form_validation->set_message('required', 'El dato es requerido');       
+            $this->form_validation->set_message('required', 'El dato es requerido');
+            $this->form_validation->set_message('max_length', 'El dato supera el límite de caracteres permitidos');
             $this->form_validation->set_error_delimiters('<div class="error"><i class="fa fa-exclamation-triangle"></i><span>','</span></div>');
             $this->form_validation->set_rules('decreto', 'Decreto', 'trim|required|max_length[50]|xss_clean');
             $this->form_validation->set_rules('fechadecreto', 'Fechadecreto', 'trim|required|xss_clean');

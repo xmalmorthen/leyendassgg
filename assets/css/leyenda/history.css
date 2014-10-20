@@ -16,6 +16,10 @@ and open the template in the editor.
     /*font-size: 11px !Important;*/
 }
 
+#data tbody td {
+    word-break: break-all;    
+}
+
 .history_formcontent{
     padding: 0px 30px 40px 30px;
 }
