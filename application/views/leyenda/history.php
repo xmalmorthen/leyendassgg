@@ -4,7 +4,13 @@
     <h1 style="font-size: 45px;font-weight: bold;border-bottom: 1px solid #DBDBDB;margin-right: 33%;padding-bottom: 5px;"><i class="fa fa-table fa-2x"></i> Histórico de leyendas</h1>
     <br/>
     <div id="data" class="col-md-9">
-        <?php echo $historytable; ?>
+        <?php if (isset($historytable)) echo $historytable;
+              else { ?>
+                <div class="alert alert-warning alert-dismissible" role="alert">
+                    <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                    <span class="label label-warning">ALERTA!</span>&nbsp;&nbsp;&nbsp;<span class="cuerpomensaje"><strong>Ocurrió un problema al obtener la leyenda, el servicio no se encuentra disponible</strong></span>
+                </div>        
+        <?php } ?>
     </div>
     <div id="infoareahistory">
         <div id="info" class="col-md-3" style="border-left: 1px solid rgba(209, 209, 209, 0.5);">

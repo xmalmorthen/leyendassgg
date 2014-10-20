@@ -30,8 +30,12 @@ and open the template in the editor.
     text-align: center;    
 }
 
+#bienvenidalabel .logoutbtn div i{
+    font-size: 2.5em;
+}
+
 #bienvenidalabel .lbllogout {
-    margin-top: -9px;
+    margin-top: -5px;
     font-size: 11px;    
 }
 

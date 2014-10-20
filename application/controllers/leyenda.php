@@ -27,15 +27,8 @@ class leyenda extends CI_Controller {
         $this->model['css'] = "<link href=" . base_url(ASSETS .'bootstrap-datepicker/css/datepicker3.css') . " rel='stylesheet' />";
         $this->model['js'] = "<script src=" . base_url(ASSETS .'bootstrap-datepicker/js/bootstrap-datepicker.js') . "></script>" .
                              "<script src=" . base_url(ASSETS .'bootstrap-datepicker/js/locales/bootstrap-datepicker.es.js') . "></script>";
-
-        $leyendastr = $this->leyenda_model->getLeyenda();
-            
-        $this->model['fechadecreto'] = utils::fecha();
-        $this->model['leyendaactual'] = $leyendastr['leyenda'];
-        $this->model['anio'] = $leyendastr['anio'];
-        $this->model['numDecreto'] = $leyendastr['numDecreto'];
-        $this->model['fechaDecreto'] = $leyendastr['fechaDecreto'];
-        $this->model['fechaRegistro'] = $leyendastr['fechaRegistro'];
+                          
+        $this->model['fechadecreto'] = utils::fecha();        
         $this->model['msgresponse'] = $this->session->flashdata('msgresponse');
         
         if ($this->input->post()){                       
@@ -57,6 +50,16 @@ class leyenda extends CI_Controller {
                 $this->model['msgresponse'] = 'formerror';
             }
         }
+        
+        $leyendastr = $this->leyenda_model->getLeyenda();
+        if ($leyendastr) {
+            $this->model['leyendaactual'] = $leyendastr['leyenda'];
+            $this->model['anio'] = $leyendastr['anio'];
+            $this->model['numDecreto'] = $leyendastr['numDecreto'];
+            $this->model['fechaDecreto'] = $leyendastr['fechaDecreto'];
+            $this->model['fechaRegistro'] = $leyendastr['fechaRegistro'];
+        }
+        
         $this->_showformpage('leyenda/index');
     }
     

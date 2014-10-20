@@ -4,6 +4,9 @@ class leyenda_model extends CI_Model{
     
     public function __construct() {
         parent::__construct();
+        
+        $this->load->library('msg_reporting');
+        
         $this->load->spark('restclient/2.1.0');
         $this->load->library('rest');
         
@@ -22,6 +25,9 @@ class leyenda_model extends CI_Model{
         try        
         {
             $leyendastr = $this->rest->get('getLeyenda');
+            if (!is_array($leyendastr)){
+                throw new Exception('Error al intentar consultar información del websrevice - ' . $leyendastr);
+            }           
             return $leyendastr;
         } catch (Exception $e) {            
             msg_reporting::error_log($e);
@@ -34,8 +40,10 @@ class leyenda_model extends CI_Model{
         {
             $uri = "?NumDecreto=" . urlencode($decreto) . "&FechaDecreto=" . $fechadecreto . "&Leyenda=" . urlencode($textoleyenda);            
             $leyendasstr = $this->rest->get('setLeyenda/' . $uri);
+            if (!is_array($leyendasstr)){
+                throw new Exception('Error al intentar consultar información del websrevice - ' . $leyendasstr);
+            }
             return $leyendasstr;
-            return FALSE;
         } catch (Exception $e) {            
             msg_reporting::error_log($e);
             return FALSE;
@@ -46,6 +54,9 @@ class leyenda_model extends CI_Model{
         try        
         {
             $leyendasstr = $this->rest->get('getLeyendas');
+            if (!is_array($leyendasstr)){
+                throw new Exception('Error al intentar consultar información del websrevice - ' . $leyendasstr);
+            }
             return $leyendasstr;
         } catch (Exception $e) {            
             msg_reporting::error_log($e);

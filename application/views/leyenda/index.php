@@ -12,15 +12,15 @@
         <?php } elseif ($msgresponse == 'error')  { ?>
         <div class="alert alert-danger alert-dismissible" role="alert">
             <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-            <span class="label label-danger">ERROR!</span>&nbsp;&nbsp;&nbsp;<span class="cuerpomensaje"><strong>Ocurrió un problema la leyenda, favor de intentarlo mas tarde.</strong></span>
+            <span class="label label-danger">ERROR!</span>&nbsp;&nbsp;&nbsp;<span class="cuerpomensaje"><strong>Ocurrió un problema al insertar la leyenda, favor de intentarlo mas tarde.</strong></span>
         </div>
         <?php } elseif ($msgresponse == 'formerror')  { ?>
         <div class="alert alert-danger alert-dismissible" role="alert">
             <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
             <span class="label label-danger">ERROR!</span>&nbsp;&nbsp;&nbsp;<span class="cuerpomensaje"><strong>Favor de ingresar los datos requeridos.</strong></span>
         </div>
-        <?php } }?>
-        <?php if(isset($leyendaactual)) { ?>
+        <?php } }
+            if(isset($leyendaactual)) { ?>
         <div id="actualleyendaarea">
             <h3>Leyenda actual</h3>
             <p>
@@ -47,6 +47,11 @@
                 <div class="col-xs-7 popoverdata"><?php echo isset($fechaRegistro) ? $fechaRegistro : 'No se encontró el número de decreto'; ?></div>
             </div>                
         </div>            
+        <?php } else { ?>
+        <div class="alert alert-warning alert-dismissible" role="alert">
+            <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            <span class="label label-warning">ALERTA!</span>&nbsp;&nbsp;&nbsp;<span class="cuerpomensaje"><strong>Ocurrió un problema al obtener la leyenda, el servicio no se encuentra disponible</strong></span>
+        </div>
         <?php } ?>
 
         <form id="formularioleyenda"  action="<?php echo site_url('leyenda'); ?>" method="post" accept-charset="utf-8">
@@ -127,7 +132,7 @@
         <h4 class="modal-title" id="myModalLabel">Limpiar pantalla</h4>
       </div>
       <div class="modal-body">
-        Confirma la limpieza del formulario.
+        Confirma limpieza del formulario.
       </div>
       <div class="modal-footer">
         <button id="acceptressetformleyenda" type="button" class="btn btn-success">Aceptar</button>

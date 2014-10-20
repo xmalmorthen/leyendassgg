@@ -7,6 +7,11 @@ and open the template in the editor.
     Created on : 15/10/2014, 03:34:38 PM
     Author     : Xmall
 */
+
+#data .alert {
+    font-size: 25px;    
+}
+
 .history_formcontent{
     padding: 0px 30px 40px 30px;
 }
