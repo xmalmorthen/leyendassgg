@@ -37,7 +37,7 @@ define('FOPEN_WRITE_CREATE_STRICT',				'xb');
 define('FOPEN_READ_WRITE_CREATE_STRICT',		'x+b');
 
 define("ASSETS", "assets/");
-define("SESSFORCED",TRUE);
+define("SESSFORCED",FALSE);
 define("SESSFORCEDUSER",'test');
 define("SESSFORCEDPASS",'7357');
 
