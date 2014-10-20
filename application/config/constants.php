@@ -38,6 +38,10 @@ define('FOPEN_READ_WRITE_CREATE_STRICT',		'x+b');
 
 define("ASSETS", "assets/");
 define("ROL_LOGEO", "4");
+define("LENGTHNUMERODECRETO", "50");
+define("LENGTHLEYENDA", "5000");
+
+
 
 /* End of file constants.php */
 /* Location: ./application/config/constants.php */

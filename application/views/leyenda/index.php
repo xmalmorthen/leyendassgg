@@ -59,7 +59,7 @@
                 <div class="espacio">
                     <i class="fa fa-asterisk"></i>
                     <span>Número de decreto</span>
-                    <input id="decreto" name="decreto" class="form-control input-lg" type="text" placeholder="Número de decreto" value="<?php echo set_value('decreto'); ?>">
+                    <input id="decreto" name="decreto" class="form-control input-lg" type="text" placeholder="Número de decreto" maxlength="<?php echo defined('LENGTHNUMERODECRETO') ? LENGTHNUMERODECRETO : '50' ?>" value="<?php echo set_value('decreto'); ?>">
                     <?php echo form_error('decreto'); ?>
                 </div>
                 <div class="espacio">
@@ -77,7 +77,7 @@
                 <div class="espacio">
                     <i class="fa fa-asterisk"></i>
                     <span>Leyenda</span>
-                    <textarea id="textoleyenda" name="textoleyenda" class="form-control" rows="3"><?php echo set_value('textoleyenda'); ?></textarea>
+                    <textarea id="textoleyenda" name="textoleyenda" class="form-control" rows="3" maxlength="<?php echo defined('LENGTHLEYENDA') ? LENGTHLEYENDA : '5000' ?>" ><?php echo set_value('textoleyenda'); ?></textarea>
                     <?php echo form_error('textoleyenda'); ?>
                 </div>
                 <div class="controles">                    
