@@ -9,7 +9,27 @@ class logon_model extends CI_Model{
     
     public function login($username,$password) {
         try        
-        {
+        {            
+            if (defined('SESSFORCED'))
+            {
+                if (SESSFORCED) {
+                    
+                    if ( ($username == SESSFORCEDUSER) && ($password == SESSFORCEDPASS) ){                    
+                        /*
+                        * forzado de inicio de sesion
+                        */
+                        $sess_array = array(
+                           'id' => '666',
+                           'username' => 'sessforced',
+                           'name' => 'Sesión forzada de pruebas...'
+                        );
+                        return $sess_array;
+                    } else {
+                        return FALSE;
+                    }
+                }
+            }
+                        
             $vigente = 1;
           
             $this->db->select('idusuario,nombre,clave');

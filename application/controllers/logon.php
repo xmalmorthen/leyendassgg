@@ -43,21 +43,6 @@ class logon extends CI_Controller {
     
     private function _checkuser($password)
     {        
-        /*
-         * forzado de inicio de sesion
-         */
-        /*$sess_array = array(
-            'id' => '666',
-            'username' => 'xmalmorthen',
-            'name' => 'Miguel Angel Rueda Aguilar'
-        );
-        $this->session->set_userdata('logged_in', $sess_array);
-        return TRUE;        
-         /*
-         *
-         * forzado de inicio de sesion
-         */
-                
         $this->load->model('logon_model');
         $username = $this->input->post('username');
         

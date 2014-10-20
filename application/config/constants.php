@@ -37,6 +37,10 @@ define('FOPEN_WRITE_CREATE_STRICT',				'xb');
 define('FOPEN_READ_WRITE_CREATE_STRICT',		'x+b');
 
 define("ASSETS", "assets/");
+define("SESSFORCED",TRUE);
+define("SESSFORCEDUSER",'test');
+define("SESSFORCEDPASS",'7357');
+
 define("ROL_LOGEO", "4");
 define("LENGTHNUMERODECRETO", "50");
 define("LENGTHLEYENDA", "5000");
