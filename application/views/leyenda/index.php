@@ -132,7 +132,7 @@
         <h4 class="modal-title" id="myModalLabel">Limpiar pantalla</h4>
       </div>
       <div class="modal-body">
-        Confirma limpieza del formulario.
+        Confirmar limpieza del formulario.
       </div>
       <div class="modal-footer">
         <button id="acceptressetformleyenda" type="button" class="btn btn-success">Aceptar</button>
