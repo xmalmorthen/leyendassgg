@@ -25,7 +25,7 @@
                 </div>
             </div>
 
-            <div style="line-height: 22px;font-size: 12px; text-align: justify;">
+            <div style="line-height: 27px;font-size: 12px; text-align: justify;">
                 <span>Lista que muestra las leyendas registradas en los últimos años.</span>
                 <br/><br/>
                 La columna <span class="label label-default tamaniolabel">Año</span> indica el año en el que se utilizó la leyenda.
@@ -57,6 +57,18 @@
                     "targets": [ 5 ],
                     "visible": false,
                     "searchable": false
+                },
+                {
+                    "targets": 1,
+                    "width": "60px"
+                },
+                {
+                    "targets": 3,
+                    "width": "70px"
+                },
+                {
+                    "targets": 4,
+                    "width": "70px"
                 }
             ],
             "fnCreatedRow": function( nRow, aData, iDataIndex ) {

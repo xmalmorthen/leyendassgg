@@ -78,6 +78,10 @@ and open the template in the editor.
     color: #575757;
 }
 
+#leyenda_formbody .input-group-addon {
+    cursor: pointer;    
+}
+
 #leyenda_formbody textArea{
     max-width: 100%;
     max-height: 150px;
