@@ -25,7 +25,7 @@
                 </div>
             </div>
 
-            <div style="line-height: 27px;font-size: 12px; text-align: justify;">
+            <div style="line-height: 29px;font-size: 12px; text-align: justify;">
                 <span>Lista que muestra las leyendas registradas en los últimos años.</span>
                 <br/><br/>
                 La columna <span class="label label-default tamaniolabel">Año</span> indica el año en el que se utilizó la leyenda.
