@@ -3,8 +3,7 @@
 class logon_model extends CI_Model{
     
     public function __construct() {
-        parent::__construct();                 
-        $this->load->database();
+        parent::__construct();
     }
     
     public function login($username,$password) {
@@ -29,7 +28,9 @@ class logon_model extends CI_Model{
                     }
                 }
             }
-                        
+        
+            $this->load->database();
+            
             $vigente = 1;
           
             $this->db->select('idusuario,nombre,clave');
