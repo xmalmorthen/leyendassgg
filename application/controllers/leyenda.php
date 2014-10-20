@@ -36,7 +36,7 @@ class leyenda extends CI_Controller {
             $this->form_validation->set_error_delimiters('<div class="error"><i class="fa fa-exclamation-triangle"></i><span>','</span></div>');
             $this->form_validation->set_rules('decreto', 'Decreto', 'trim|required|max_length[50]|xss_clean');
             $this->form_validation->set_rules('fechadecreto', 'Fechadecreto', 'trim|required|xss_clean');
-            $this->form_validation->set_rules('textoleyenda', 'Textoleyenda', 'trim|required|max_length[50]|xss_clean');
+            $this->form_validation->set_rules('textoleyenda', 'Textoleyenda', 'trim|required|max_length[5000]|xss_clean');
 
             if($this->form_validation->run() == TRUE)
             {
